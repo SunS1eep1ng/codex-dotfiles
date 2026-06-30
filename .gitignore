@@ -1,0 +1,39 @@
+# Secrets and local state
+auth.json
+*.key
+*.pem
+*.p12
+*.pfx
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.log
+
+# Codex state that should not be versioned
+.codex-global-state*
+sessions/
+archived_sessions/
+cache/
+tmp/
+.tmp/
+logs/
+generated_images/
+models_cache.json
+session_index.jsonl
+state_*.sqlite*
+logs_*.sqlite*
+goals_*.sqlite*
+memories_*.sqlite*
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Build/runtime noise
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
