@@ -1,7 +1,7 @@
 ﻿{
-    "generatedAt":  "2026-06-30T22:04:23.7925073+08:00",
+    "generatedAt":  "2026-07-08T23:47:19.5787689+08:00",
     "codexHome":  "C:\\Users\\sunwa\\.codex",
-    "installedSkillCount":  75,
+    "installedSkillCount":  83,
     "officialPluginSkillCount":  72,
     "installedSkills":  [
                             {
@@ -143,6 +143,12 @@
                                 "Bytes":  20894
                             },
                             {
+                                "Name":  "expression-skill",
+                                "Description":  "This skill should be used when the user asks for efficient communication, task reports, file-operation summaries, research discussion, study-note synthesis, planning, writing feedback, or responses that need conclusion-first structure, concrete evidence, risk disclosure, and useful next steps.",
+                                "Path":  "skills/expression-skill/SKILL.md",
+                                "Bytes":  9789
+                            },
+                            {
                                 "Name":  "find-skills",
                                 "Description":  "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express interest in extending capabilities. This skill should be used when the user is looking for functionality that might exist as an installable skill. 中文触发词：找skill、安装skill、有没有某个技能、推荐技能、查可用skill、扩展Codex能力、我需要一个skill、技能市场、技能清单。",
                                 "Path":  "skills/find-skills/SKILL.md",
@@ -207,6 +213,12 @@
                                 "Description":  "Low-level plotting library for full customization. Use when you need fine-grained control over every plot element, creating novel plot types, or integrating with specific scientific workflows. Export to PNG/PDF/SVG for publication. For quick statistical plots use seaborn; for interactive plots use plotly; for publication-ready multi-panel figures with journal styling, use scientific-visualization. 中文触发词：matplotlib画图、Python绘图、科研图、折线图、柱状图、散点图、多子图、导出PDF/SVG/PNG、精细控制图表样式。",
                                 "Path":  "skills/matplotlib/SKILL.md",
                                 "Bytes":  11994
+                            },
+                            {
+                                "Name":  "ml-paper-writing",
+                                "Description":  "Write publication-ready ML/AI papers for NeurIPS, ICML, ICLR, ACL, AAAI, COLM. Use when drafting papers from research repos, conducting literature reviews, finding related work, verifying citations, or preparing camera-ready submissions. Includes LaTeX templates, citation verification workflows, and paper discovery/evaluation criteria.",
+                                "Path":  "skills/ml-paper-writing/SKILL.md",
+                                "Bytes":  44121
                             },
                             {
                                 "Name":  "nature-academic-search",
@@ -299,6 +311,12 @@
                                 "Bytes":  10008
                             },
                             {
+                                "Name":  "paper-self-review",
+                                "Description":  "This skill should be used when the user asks to \"review paper quality\", \"check paper completeness\", \"validate paper structure\", \"self-review before submission\", \"audit claims\", \"check overclaiming\", \"verify whether results support claims\", or mentions systematic paper quality checking. Provides comprehensive quality assurance checklist for academic papers.",
+                                "Path":  "skills/paper-self-review/SKILL.md",
+                                "Bytes":  6032
+                            },
+                            {
                                 "Name":  "pdf",
                                 "Description":  "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks, creating new PDFs, filling PDF forms, encrypting/decrypting PDFs, extracting images, and OCR on scanned PDFs to make them searchable. If the user mentions a .pdf file or asks to produce one, use this skill. 中文触发词：PDF处理、读PDF、提取文字、提取表格、PDF转Markdown、合并PDF、拆分PDF、OCR、扫描件识别、打印友好PDF、复习资料整理。",
                                 "Path":  "skills/pdf/SKILL.md",
@@ -309,6 +327,12 @@
                                 "Description":  "Structured manuscript/grant review with checklist-based evaluation. Use when writing formal peer reviews with specific criteria methodology assessment, statistical validity, reporting standards compliance (CONSORT/STROBE), and constructive feedback. Best for actual review writing, manuscript revision. For evaluating claims/evidence quality use scientific-critical-thinking; for quantitative scoring frameworks use scholar-evaluation. 中文触发词：论文审稿、同行评审、审稿意见、评审报告、方法学评估、统计有效性、报告规范、CONSORT、STROBE、基金评审、给修改建议。",
                                 "Path":  "skills/peer-review/SKILL.md",
                                 "Bytes":  23892
+                            },
+                            {
+                                "Name":  "planning-with-files",
+                                "Description":  "Use this by default for non-trivial multi-step work that needs persistent planning, progress tracking, or durable notes on disk. Trigger when a task will likely span multiple tool calls, research steps, verification loops, or enough context that the plan should not live only in transient chat memory.",
+                                "Path":  "skills/planning-with-files/SKILL.md",
+                                "Bytes":  4290
                             },
                             {
                                 "Name":  "playwright",
@@ -329,16 +353,34 @@
                                 "Bytes":  14706
                             },
                             {
+                                "Name":  "publication-chart-skill",
+                                "Description":  "This skill should be used when the user asks for a publication-quality scientific figure or table, wants help choosing the right chart for results, needs a paper-ready pubfig or pubtab workflow, wants a figure + companion table for a results section, wants an Excel sheet turned into publication-ready LaTeX, or wants an existing scientific figure/table reviewed and upgraded.",
+                                "Path":  "skills/publication-chart-skill/SKILL.md",
+                                "Bytes":  13221
+                            },
+                            {
                                 "Name":  "pytorch-lightning",
                                 "Description":  "Deep learning framework (PyTorch Lightning). Organize PyTorch code into LightningModules, configure Trainers for multi-GPU/TPU, implement data pipelines, callbacks, logging (W\u0026B, TensorBoard), distributed training (DDP, FSDP, DeepSpeed), for scalable neural network training. 中文触发词：PyTorch Lightning、深度学习训练、LightningModule、Trainer、多GPU、DDP、FSDP、DeepSpeed、训练日志、callback、模型训练框架。",
                                 "Path":  "skills/pytorch-lightning/SKILL.md",
                                 "Bytes":  7034
                             },
                             {
+                                "Name":  "research-ideation",
+                                "Description":  "This skill should be used when the user asks to \"brainstorm research ideas\", \"use 5W1H framework\", \"identify research gaps\", \"conduct gap analysis\", \"start research project\", \"conduct literature review\", \"define research question\", \"select research method\", \"plan research\", or mentions research project initiation phase. Provides comprehensive guidance for research startup workflow from idea generation to planning.",
+                                "Path":  "skills/research-ideation/SKILL.md",
+                                "Bytes":  9743
+                            },
+                            {
                                 "Name":  "research-paper-writing",
                                 "Description":  "Improve academic paper writing quality for ML/CV/NLP-style papers with clear section structure, paragraph flow, and reviewer-facing presentation. Use when drafting or revising Abstract, Introduction, Related Work, Method, Experiments, or Conclusion; polishing figures/tables; checking claim-support alignment; or performing self-review before submission. 中文触发词：研究论文写作、ML论文、CV论文、NLP论文、论文段落、审稿人友好表达、摘要引言方法实验、论文结构、学术表达提升。",
                                 "Path":  "skills/research-paper-writing/SKILL.md",
                                 "Bytes":  5127
+                            },
+                            {
+                                "Name":  "review-response",
+                                "Description":  "Systematic review response workflow from comment analysis to professional rebuttal writing. Use when the user asks to \"write rebuttal\", \"respond to reviewers\", \"draft review response\", or \"analyze review comments\". Improves paper acceptance rates.",
+                                "Path":  "skills/review-response/SKILL.md",
+                                "Bytes":  5741
                             },
                             {
                                 "Name":  "scientific-schematics",
@@ -431,6 +473,12 @@
                                 "Bytes":  6839
                             },
                             {
+                                "Name":  "verification-loop",
+                                "Description":  "This skill should be used when the user asks to \"verify code\", \"run verification\", \"check quality\", \"validate changes\", or before creating a PR. Provides comprehensive verification including build, type check, lint, tests, security scan, and diff review.",
+                                "Path":  "skills/verification-loop/SKILL.md",
+                                "Bytes":  3550
+                            },
+                            {
                                 "Name":  "web-design-reviewer",
                                 "Description":  "This skill enables visual inspection of websites running locally or remotely to identify and fix design issues. Triggers on requests like \"review website design\", \"check the UI\", \"fix the layout\", \"find design problems\". Detects issues with responsive design, accessibility, visual consistency, and layout breakage, then performs fixes at the source code level. 中文触发词：检查网页设计、UI评审、布局问题、响应式问题、视觉一致性、可访问性、界面不好看、修页面样式、设计问题定位。",
                                 "Path":  "skills/web-design-reviewer/SKILL.md",
@@ -459,19 +507,19 @@
                                  {
                                      "Name":  "control-in-app-browser",
                                      "Description":  "Control the in-app Browser. Use to open, navigate, inspect, test, click, type, screenshot, or verify local targets such as localhost, 127.0.0.1, ::1, file://, the current in-app browser tab, and websites shown side by side inside Codex.",
-                                     "Path":  "openai-bundled/browser/26.623.70822/skills/control-in-app-browser/SKILL.md",
+                                     "Path":  "openai-bundled/browser/26.623.141536/skills/control-in-app-browser/SKILL.md",
                                      "Bytes":  4460
                                  },
                                  {
                                      "Name":  "control-chrome",
                                      "Description":  "Control the user\u0027s Chrome browser for tasks that depend on existing Chrome state: tabs, logged-in sessions, or extensions. Prefer purpose-built connectors, APIs, or CLIs when available.",
-                                     "Path":  "openai-bundled/chrome/26.623.70822/skills/control-chrome/SKILL.md",
+                                     "Path":  "openai-bundled/chrome/26.623.141536/skills/control-chrome/SKILL.md",
                                      "Bytes":  4980
                                  },
                                  {
                                      "Name":  "computer-use",
                                      "Description":  "Control Windows apps from Codex",
-                                     "Path":  "openai-bundled/computer-use/26.623.70822/skills/computer-use/SKILL.md",
+                                     "Path":  "openai-bundled/computer-use/26.623.141536/skills/computer-use/SKILL.md",
                                      "Bytes":  40037
                                  },
                                  {
@@ -501,133 +549,133 @@
                                  {
                                      "Name":  "frontend-app-builder",
                                      "Description":  "Use for new frontend applications, dashboards, games, creative websites, hero sections, and visually driven UI from scratch, or when the user explicitly asks for a redesign/restyle/modernization. Builds from clean, airy, high-taste, readable image-generated concept design with section-specific references, faithful implementation, and browser testing.",
-                                     "Path":  "openai-curated/build-web-apps/3fdeeb49/skills/frontend-app-builder/SKILL.md",
+                                     "Path":  "openai-curated/build-web-apps/d6169bef/skills/frontend-app-builder/SKILL.md",
                                      "Bytes":  31987
                                  },
                                  {
                                      "Name":  "frontend-testing-debugging",
                                      "Description":  "Use when testing, debugging, or making targeted improvements to rendered frontend apps through the Build Web Apps or web dev plugin: local dev servers, UI regressions, interaction bugs, console errors, responsive layout, and visual QA. Check whether the Browser plugin is available and use it first when it is; otherwise use regular Playwright with the recorded reason.",
-                                     "Path":  "openai-curated/build-web-apps/3fdeeb49/skills/frontend-testing-debugging/SKILL.md",
+                                     "Path":  "openai-curated/build-web-apps/d6169bef/skills/frontend-testing-debugging/SKILL.md",
                                      "Bytes":  9942
                                  },
                                  {
                                      "Name":  "react-best-practices",
                                      "Description":  "React and Next.js performance optimization guidelines from Vercel Engineering. This skill should be used when writing, reviewing, or refactoring React/Next.js code to ensure optimal performance patterns. Triggers on tasks involving React components, Next.js pages, data fetching, bundle optimization, or performance improvements.",
-                                     "Path":  "openai-curated/build-web-apps/3fdeeb49/skills/react-best-practices/SKILL.md",
+                                     "Path":  "openai-curated/build-web-apps/d6169bef/skills/react-best-practices/SKILL.md",
                                      "Bytes":  6813
                                  },
                                  {
                                      "Name":  "shadcn",
                                      "Description":  "Manages shadcn components and projects — adding, searching, fixing, debugging, styling, and composing UI. Provides project context, component docs, and usage examples. Applies when working with shadcn/ui, component registries, presets, --preset codes, or any project with a components.json file. Also triggers for \"shadcn init\", \"create an app with --preset\", or \"switch to --preset\".",
-                                     "Path":  "openai-curated/build-web-apps/3fdeeb49/skills/shadcn-best-practices/SKILL.md",
+                                     "Path":  "openai-curated/build-web-apps/d6169bef/skills/shadcn-best-practices/SKILL.md",
                                      "Bytes":  16666
                                  },
                                  {
                                      "Name":  "stripe-best-practices",
                                      "Description":  "Guides Stripe integration decisions — API selection (Checkout Sessions vs PaymentIntents), Connect platform setup (Accounts v2, controller properties), billing/subscriptions, Treasury financial accounts, integration surfaces (Checkout, Payment Element), and migrating from deprecated Stripe APIs. Use when building, modifying, or reviewing any Stripe integration — including accepting payments, building marketplaces, integrating Stripe, processing payments, setting up subscriptions, or creating connected accounts.",
-                                     "Path":  "openai-curated/build-web-apps/3fdeeb49/skills/stripe-best-practices/SKILL.md",
+                                     "Path":  "openai-curated/build-web-apps/d6169bef/skills/stripe-best-practices/SKILL.md",
                                      "Bytes":  2043
                                  },
                                  {
                                      "Name":  "supabase-postgres-best-practices",
                                      "Description":  "Postgres performance optimization and best practices from Supabase. Use this skill when writing, reviewing, or optimizing Postgres queries, schema designs, or database configurations.",
-                                     "Path":  "openai-curated/build-web-apps/3fdeeb49/skills/supabase-best-practices/SKILL.md",
+                                     "Path":  "openai-curated/build-web-apps/d6169bef/skills/supabase-best-practices/SKILL.md",
                                      "Bytes":  2627
                                  },
                                  {
                                      "Name":  "figma-code-connect",
                                      "Description":  "Creates and maintains Figma Code Connect template files that map Figma components to code snippets. Use when the user mentions Code Connect, Figma component mapping, design-to-code translation, or asks to create/update .figma.ts or .figma.js files.",
-                                     "Path":  "openai-curated/figma/3fdeeb49/skills/figma-code-connect/SKILL.md",
+                                     "Path":  "openai-curated/figma/d6169bef/skills/figma-code-connect/SKILL.md",
                                      "Bytes":  26185
                                  },
                                  {
                                      "Name":  "figma-create-new-file",
                                      "Description":  "**MANDATORY prerequisite** — you MUST invoke this skill BEFORE every `create_new_file` tool call. NEVER call `create_new_file` directly without loading this skill first. Trigger whenever the user wants a new blank Figma file — a new design, FigJam, or Slides file — or when you need a fresh file before calling `use_figma`. Usage — /figma-create-new-file [editorType] [fileName] (e.g. /figma-create-new-file figjam My Whiteboard, /figma-create-new-file slides Q3 Review)",
-                                     "Path":  "openai-curated/figma/3fdeeb49/skills/figma-create-new-file/SKILL.md",
+                                     "Path":  "openai-curated/figma/d6169bef/skills/figma-create-new-file/SKILL.md",
                                      "Bytes":  4026
                                  },
                                  {
                                      "Name":  "figma-generate-design",
                                      "Description":  "Use this skill alongside figma-use when the task involves translating an application page, view, or multi-section layout into Figma. Triggers: \u0027write to Figma\u0027, \u0027create in Figma from code\u0027, \u0027push page to Figma\u0027, \u0027take this app/page and build it in Figma\u0027, \u0027create a screen\u0027, \u0027build a landing page in Figma\u0027, \u0027update the Figma screen to match code\u0027, \u0027convert this modal/dialog/drawer/panel to Figma\u0027. This is the preferred workflow skill whenever the user wants to build or update a full page, modal, dialog, drawer, sidebar, panel, or any composed multi-section view in Figma from code or a description. Discovers design system components, variables, and styles from Code Connect files, existing screens, and library search, then imports them and assembles views incrementally section-by-section using design system tokens instead of hardcoded values.",
-                                     "Path":  "openai-curated/figma/3fdeeb49/skills/figma-generate-design/SKILL.md",
+                                     "Path":  "openai-curated/figma/d6169bef/skills/figma-generate-design/SKILL.md",
                                      "Bytes":  34252
                                  },
                                  {
                                      "Name":  "figma-generate-diagram",
                                      "Description":  "MANDATORY prerequisite — load this skill BEFORE every `generate_diagram` tool call. NEVER call `generate_diagram` directly without loading this skill first. Trigger whenever the user asks to create, generate, draw, render, sketch, or build a diagram — flowchart, architecture diagram, sequence diagram, ERD or entity-relationship diagram, state diagram or state machine, gantt chart, or timeline. Also trigger when the user mentions Mermaid syntax or wants a system architecture, decision tree, dependency graph, API call flow, auth handshake, schema, or pipeline visualized in FigJam. Routes to type-specific guidance, sets universal Mermaid constraints, and tells you when to use a different diagram type or skip the tool entirely (mindmaps, pie charts, class diagrams, etc.).",
-                                     "Path":  "openai-curated/figma/3fdeeb49/skills/figma-generate-diagram/SKILL.md",
+                                     "Path":  "openai-curated/figma/d6169bef/skills/figma-generate-diagram/SKILL.md",
                                      "Bytes":  10384
                                  },
                                  {
                                      "Name":  "figma-generate-library",
                                      "Description":  "Build or update a professional-grade design system in Figma from a codebase. Use when the user wants to create variables/tokens, build component libraries, create individual components with proper variant sets and variable bindings, set up theming (light/dark modes), document foundations, or reconcile gaps between code and Figma. Also use when the user asks to create or generate any component in Figma — even a single one — since components require proper variable foundations, variant states, and design token bindings to be production-quality. This skill teaches WHAT to build and in WHAT ORDER — it complements the `figma-use` skill which teaches HOW to call the Plugin API. Both skills should be loaded together.",
-                                     "Path":  "openai-curated/figma/3fdeeb49/skills/figma-generate-library/SKILL.md",
+                                     "Path":  "openai-curated/figma/d6169bef/skills/figma-generate-library/SKILL.md",
                                      "Bytes":  23247
                                  },
                                  {
                                      "Name":  "figma-implement-motion",
                                      "Description":  "Translates Figma motion and animations into production-ready application code. Use when implementing animation/motion from a Figma design — user mentions \"implement this motion\", \"add animation from Figma\", \"animate this component\", provides a Figma URL whose node is animated, or when `get_design_context` returns motion data or instructs you to call `get_motion_context`.",
-                                     "Path":  "openai-curated/figma/3fdeeb49/skills/figma-implement-motion/SKILL.md",
+                                     "Path":  "openai-curated/figma/d6169bef/skills/figma-implement-motion/SKILL.md",
                                      "Bytes":  22703
                                  },
                                  {
                                      "Name":  "figma-swiftui",
                                      "Description":  "SwiftUI ↔ Figma translation. Use whenever the user mentions Swift, SwiftUI, iOS, iPhone, or iPad — in EITHER direction — translating a Figma design into SwiftUI (design → code), or pushing SwiftUI views / screens / tokens back into a Figma file (code → design). Triggers on phrases like \u0027implement this Figma design in SwiftUI\u0027, \u0027build this screen in Swift\u0027, \u0027push this SwiftUI view to Figma\u0027, \u0027mirror my Swift code in a Figma file\u0027, or whenever a Figma URL appears alongside `.swift` files / an `.xcodeproj`. Routes to a direction-specific reference doc; loads alongside `figma-use` for the code → design path.",
-                                     "Path":  "openai-curated/figma/3fdeeb49/skills/figma-swiftui/SKILL.md",
+                                     "Path":  "openai-curated/figma/d6169bef/skills/figma-swiftui/SKILL.md",
                                      "Bytes":  4085
                                  },
                                  {
                                      "Name":  "figma-use",
                                      "Description":  "**MANDATORY prerequisite** — you MUST invoke this skill BEFORE every `use_figma` tool call. NEVER call `use_figma` directly without loading this skill first. Skipping it causes common, hard-to-debug failures. Trigger whenever the user wants to perform a write action or a unique read action that requires JavaScript execution in the Figma file context — e.g. create/edit/delete nodes, set up variables or tokens, build components and variants, modify auto-layout or fills, bind variables to properties, or inspect file structure programmatically.",
-                                     "Path":  "openai-curated/figma/3fdeeb49/skills/figma-use/SKILL.md",
+                                     "Path":  "openai-curated/figma/d6169bef/skills/figma-use/SKILL.md",
                                      "Bytes":  34873
                                  },
                                  {
                                      "Name":  "figma-use-figjam",
                                      "Description":  "This skill helps agents use Figma\u0027s use_figma MCP tool in the FigJam context. Can be used alongside figma-use which has foundational context for using the use_figma tool.",
-                                     "Path":  "openai-curated/figma/3fdeeb49/skills/figma-use-figjam/SKILL.md",
+                                     "Path":  "openai-curated/figma/d6169bef/skills/figma-use-figjam/SKILL.md",
                                      "Bytes":  7153
                                  },
                                  {
                                      "Name":  "figma-use-motion",
                                      "Description":  "Motion / animation context for the `use_figma` MCP tool — animating Figma nodes via manual keyframes, animation styles, easing, and timeline duration. Load alongside figma-use whenever a task involves adding, editing, or inspecting animation on a node.",
-                                     "Path":  "openai-curated/figma/3fdeeb49/skills/figma-use-motion/SKILL.md",
+                                     "Path":  "openai-curated/figma/d6169bef/skills/figma-use-motion/SKILL.md",
                                      "Bytes":  7001
                                  },
                                  {
                                      "Name":  "figma-use-slides",
                                      "Description":  "This skill helps agents use Figma\u0027s use_figma MCP tool in the Slides context. Can be used alongside figma-use which has foundational context for using the use_figma tool.",
-                                     "Path":  "openai-curated/figma/3fdeeb49/skills/figma-use-slides/SKILL.md",
+                                     "Path":  "openai-curated/figma/d6169bef/skills/figma-use-slides/SKILL.md",
                                      "Bytes":  22372
                                  },
                                  {
                                      "Name":  "gh-address-comments",
                                      "Description":  "Address actionable GitHub pull request review feedback. Use when the user wants to inspect unresolved review threads, requested changes, or inline review comments on a PR, then implement selected fixes. Use the GitHub app for PR metadata and flat comment reads, and use the bundled GraphQL script via `gh` whenever thread-level state, resolution status, or inline review context matters.",
-                                     "Path":  "openai-curated/github/3fdeeb49/skills/gh-address-comments/SKILL.md",
+                                     "Path":  "openai-curated/github/d6169bef/skills/gh-address-comments/SKILL.md",
                                      "Bytes":  3580
                                  },
                                  {
                                      "Name":  "gh-fix-ci",
                                      "Description":  "Use when a user asks to debug or fix failing GitHub PR checks that run in GitHub Actions. Use the GitHub app from this plugin for PR metadata and patch context, and use `gh` for Actions check and log inspection before implementing any approved fix.",
-                                     "Path":  "openai-curated/github/3fdeeb49/skills/gh-fix-ci/SKILL.md",
+                                     "Path":  "openai-curated/github/d6169bef/skills/gh-fix-ci/SKILL.md",
                                      "Bytes":  4407
                                  },
                                  {
                                      "Name":  "github",
                                      "Description":  "Triage and orient GitHub repository, pull request, and issue work through the connected GitHub app. Use when the user asks for general GitHub help, wants PR or issue summaries, or needs repository context before choosing a more specific GitHub workflow.",
-                                     "Path":  "openai-curated/github/3fdeeb49/skills/github/SKILL.md",
+                                     "Path":  "openai-curated/github/d6169bef/skills/github/SKILL.md",
                                      "Bytes":  4430
                                  },
                                  {
                                      "Name":  "yeet",
                                      "Description":  "Publish local changes to GitHub by confirming scope, committing intentionally, pushing the branch, and opening a draft PR through the GitHub app from this plugin, with `gh` used only as a fallback where connector coverage is insufficient.",
-                                     "Path":  "openai-curated/github/3fdeeb49/skills/yeet/SKILL.md",
+                                     "Path":  "openai-curated/github/d6169bef/skills/yeet/SKILL.md",
                                      "Bytes":  4089
                                  },
                                  {
                                      "Name":  "linear",
                                      "Description":  "Manage issues, projects \u0026 team workflows in Linear. Use when the user wants to read, create or updates tickets in Linear.",
-                                     "Path":  "openai-curated/linear/3fdeeb49/skills/linear/SKILL.md",
+                                     "Path":  "openai-curated/linear/d6169bef/skills/linear/SKILL.md",
                                      "Bytes":  4548
                                  },
                                  {
@@ -837,55 +885,55 @@
                                  {
                                      "Name":  "gh-address-comments",
                                      "Description":  "Address actionable GitHub pull request review feedback. Use when the user wants to inspect unresolved review threads, requested changes, or inline review comments on a PR, then implement selected fixes. Use the GitHub app for PR metadata and flat comment reads, and use the bundled GraphQL script via `gh` whenever thread-level state, resolution status, or inline review context matters.",
-                                     "Path":  "openai-curated-remote/github/0.1.5/skills/gh-address-comments/SKILL.md",
+                                     "Path":  "openai-curated-remote/github/0.1.7-2841cf9749ae/skills/gh-address-comments/SKILL.md",
                                      "Bytes":  3536
                                  },
                                  {
                                      "Name":  "gh-fix-ci",
                                      "Description":  "Use when a user asks to debug or fix failing GitHub PR checks that run in GitHub Actions. Use the GitHub app from this plugin for PR metadata and patch context, and use `gh` for Actions check and log inspection before implementing any approved fix.",
-                                     "Path":  "openai-curated-remote/github/0.1.5/skills/gh-fix-ci/SKILL.md",
+                                     "Path":  "openai-curated-remote/github/0.1.7-2841cf9749ae/skills/gh-fix-ci/SKILL.md",
                                      "Bytes":  4326
                                  },
                                  {
                                      "Name":  "github",
                                      "Description":  "Triage and orient GitHub repository, pull request, and issue work through the connected GitHub app. Use when the user asks for general GitHub help, wants PR or issue summaries, or needs repository context before choosing a more specific GitHub workflow.",
-                                     "Path":  "openai-curated-remote/github/0.1.5/skills/github/SKILL.md",
+                                     "Path":  "openai-curated-remote/github/0.1.7-2841cf9749ae/skills/github/SKILL.md",
                                      "Bytes":  4356
                                  },
                                  {
                                      "Name":  "yeet",
                                      "Description":  "Publish local changes to GitHub by confirming scope, committing intentionally, pushing the branch, and opening a draft PR through the GitHub app from this plugin, with `gh` used only as a fallback where connector coverage is insufficient.",
-                                     "Path":  "openai-curated-remote/github/0.1.5/skills/yeet/SKILL.md",
-                                     "Bytes":  4019
+                                     "Path":  "openai-curated-remote/github/0.1.7-2841cf9749ae/skills/yeet/SKILL.md",
+                                     "Bytes":  4011
                                  },
                                  {
                                      "Name":  "documents",
                                      "Description":  "Create, edit, redline, and comment on `.docx`, Word, and Google Docs-targeted document artifacts inside the container, with a strict render-and-verify workflow. Use `render_docx.py` to generate page PNGs (and optional PDF) for visual QA, then iterate until layout is flawless before delivering the final document.",
-                                     "Path":  "openai-primary-runtime/documents/26.623.12021/skills/documents/SKILL.md",
+                                     "Path":  "openai-primary-runtime/documents/26.630.12135/skills/documents/SKILL.md",
                                      "Bytes":  38543
                                  },
                                  {
                                      "Name":  "pdf",
                                      "Description":  "Read, create, inspect, render, and verify PDF files where visual layout matters. Use Poppler rendering plus Python tools such as reportlab, pdfplumber, and pypdf for generation and extraction.",
-                                     "Path":  "openai-primary-runtime/pdf/26.623.12021/skills/pdf/SKILL.md",
+                                     "Path":  "openai-primary-runtime/pdf/26.630.12135/skills/pdf/SKILL.md",
                                      "Bytes":  2842
                                  },
                                  {
                                      "Name":  "Presentations",
                                      "Description":  "Create or edit PowerPoint or Google Slides decks",
-                                     "Path":  "openai-primary-runtime/presentations/26.623.12021/skills/presentations/SKILL.md",
-                                     "Bytes":  14944
+                                     "Path":  "openai-primary-runtime/presentations/26.630.12135/skills/presentations/SKILL.md",
+                                     "Bytes":  16858
                                  },
                                  {
                                      "Name":  "Spreadsheets",
                                      "Description":  "Use this skill when a user requests to create, modify, analyze, visualize, or work with spreadsheet files (`.xlsx`, `.xls`, `.csv`, `.tsv`) or Google Sheets-targeted spreadsheet artifacts with formulas, formatting, charts, tables, and recalculation.",
-                                     "Path":  "openai-primary-runtime/spreadsheets/26.623.12021/skills/spreadsheets/SKILL.md",
+                                     "Path":  "openai-primary-runtime/spreadsheets/26.630.12135/skills/spreadsheets/SKILL.md",
                                      "Bytes":  14280
                                  },
                                  {
                                      "Name":  "template-creator",
                                      "Description":  "Create or update a reusable personal Codex artifact-template skill. Use when the user invokes $template-creator or asks in natural language to create a template using, from, or based on an attached Word document, PowerPoint presentation, or Excel workbook, or explicitly asks to edit or update a passed artifact-template skill. Do not use for one-off artifact creation from an existing template.",
-                                     "Path":  "openai-primary-runtime/template-creator/26.623.12021/skills/template-creator/SKILL.md",
+                                     "Path":  "openai-primary-runtime/template-creator/26.630.12135/skills/template-creator/SKILL.md",
                                      "Bytes":  5984
                                  }
                              ]
