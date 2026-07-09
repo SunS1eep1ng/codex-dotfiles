@@ -1,13 +1,13 @@
 # codex-dotfiles
 
-私人 Codex 使用习惯同步仓库：`AGENTS.md`、安全版 `config.toml`、本机 skills 快照、官方/plugin skills 清单。
+个人 Codex 使用习惯同步仓库：`AGENTS.md`、安全版 `config.toml`、本机 skills 快照、官方/plugin skills 清单。
 
 ## 一键同步
 
 Windows:
 
 ```powershell
-git clone <your-private-repo-url> codex-dotfiles
+git clone https://github.com/SunS1eep1ng/codex-dotfiles.git codex-dotfiles
 cd codex-dotfiles
 powershell -ExecutionPolicy Bypass -File .\scripts\sync-codex.ps1
 ```
@@ -15,7 +15,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\sync-codex.ps1
 Linux / macOS / server:
 
 ```bash
-git clone <your-private-repo-url> codex-dotfiles
+git clone https://github.com/SunS1eep1ng/codex-dotfiles.git codex-dotfiles
 cd codex-dotfiles
 bash scripts/sync-codex.sh
 ```
@@ -39,7 +39,7 @@ git add .
 git commit -m "chore: update codex dotfiles"
 ```
 
-然后手动 push 到你的私有远程仓库。
+然后手动 push 到你的远程仓库。
 
 ## 不同步什么
 
