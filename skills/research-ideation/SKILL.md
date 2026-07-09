@@ -1,6 +1,8 @@
 ---
 name: research-ideation
-description: This skill should be used when the user asks to "brainstorm research ideas", "use 5W1H framework", "identify research gaps", "conduct gap analysis", "start research project", "conduct literature review", "define research question", "select research method", "plan research", or mentions research project initiation phase. Provides comprehensive guidance for research startup workflow from idea generation to planning.
+description: >-
+  科研选题、研究idea brainstorming、5W1H、研究空白/gap analysis、开题、文献综述、定义研究问题、选择研究方法、研究计划、项目启动。Use when the user asks to "brainstorm research ideas", "use 5W1H framework",
+  "identify research gaps", "conduct gap analysis", "start research project", "conduct literature review", "define research question", "select research method", "plan research", or mentions research project initiation phase. Provides comprehensive guidance for research startup workflow from idea generation to planning.
 version: 0.1.0
 ---
 

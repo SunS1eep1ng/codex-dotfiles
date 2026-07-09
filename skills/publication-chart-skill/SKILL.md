@@ -1,6 +1,8 @@
 ---
 name: publication-chart-skill
-description: This skill should be used when the user asks for a publication-quality scientific figure or table, wants help choosing the right chart for results, needs a paper-ready pubfig or pubtab workflow, wants a figure + companion table for a results section, wants an Excel sheet turned into publication-ready LaTeX, or wants an existing scientific figure/table reviewed and upgraded.
+description: >-
+  论文图表、发表级 scientific figure/table、结果可视化、图表类型选择、pubfig/pubtab、Excel转LaTeX表格、论文结果图、现有图表审查和升级。Use when the user asks for a publication-quality scientific figure or table,
+  wants help choosing the right chart for results, needs a paper-ready pubfig or pubtab workflow, wants a figure + companion table for a results section, wants an Excel sheet turned into publication-ready LaTeX, or wants an existing scientific figure/table reviewed and upgraded.
 version: 0.2.0
 ---
 

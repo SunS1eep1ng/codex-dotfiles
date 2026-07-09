@@ -1,6 +1,8 @@
 ---
 name: review-response
-description: Systematic review response workflow from comment analysis to professional rebuttal writing. Use when the user asks to "write rebuttal", "respond to reviewers", "draft review response", or "analyze review comments". Improves paper acceptance rates.
+description: >-
+  审稿意见回复、返修回复、rebuttal、response letter、逐条回复 reviewer comments、分析审稿意见、提高接收率。Systematic review response workflow from comment analysis to professional rebuttal writing.
+  Use when the user asks to "write rebuttal", "respond to reviewers", "draft review response", or "analyze review comments". Improves paper acceptance rates.
 tags: [Research, Academic, Rebuttal, Paper Writing]
 version: 0.1.0
 ---

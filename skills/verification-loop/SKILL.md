@@ -1,6 +1,8 @@
 ---
 name: verification-loop
-description: This skill should be used when the user asks to "verify code", "run verification", "check quality", "validate changes", or before creating a PR. Provides comprehensive verification including build, type check, lint, tests, security scan, and diff review.
+description: >-
+  验证代码、运行检查、质量检查、验证修改、提交前检查、PR前验证、build/typecheck/lint/test/security scan/diff review。Use when the user asks to "verify code", "run verification",
+  "check quality", "validate changes", or before creating a PR. Provides comprehensive verification including build, type check, lint, tests, security scan, and diff review.
 version: 1.0.0
 ---
 

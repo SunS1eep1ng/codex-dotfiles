@@ -1,6 +1,8 @@
 ---
 name: paper-self-review
-description: This skill should be used when the user asks to "review paper quality", "check paper completeness", "validate paper structure", "self-review before submission", "audit claims", "check overclaiming", "verify whether results support claims", or mentions systematic paper quality checking. Provides comprehensive quality assurance checklist for academic papers.
+description: >-
+  论文自查、投稿前检查、论文质量审查、结构完整性、claim审计、过度声称检查、结果是否支撑结论、系统性论文QA。Use when the user asks to "review paper quality", "check paper completeness",
+  "validate paper structure", "self-review before submission", "audit claims", "check overclaiming", "verify whether results support claims", or mentions systematic paper quality checking. Provides comprehensive quality assurance checklist for academic papers.
 version: 0.1.0
 ---
 

@@ -1,6 +1,8 @@
 ---
 name: expression-skill
-description: This skill should be used when the user asks for efficient communication, task reports, file-operation summaries, research discussion, study-note synthesis, planning, writing feedback, or responses that need conclusion-first structure, concrete evidence, risk disclosure, and useful next steps.
+description: >-
+  高效表达、任务汇报、文件操作总结、研究讨论、学习笔记整理、计划制定、写作反馈、先给结论、风险说明、下一步建议。Use when the user asks for efficient communication, task reports,
+  file-operation summaries, research discussion, study-note synthesis, planning, writing feedback, or responses that need conclusion-first structure, concrete evidence, risk disclosure, and useful next steps.
 ---
 
 # Expression Skill

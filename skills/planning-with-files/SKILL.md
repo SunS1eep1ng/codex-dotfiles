@@ -1,6 +1,8 @@
 ---
 name: planning-with-files
-description: Use this by default for non-trivial multi-step work that needs persistent planning, progress tracking, or durable notes on disk. Trigger when a task will likely span multiple tool calls, research steps, verification loops, or enough context that the plan should not live only in transient chat memory.
+description: >-
+  多步骤任务计划、持久进度记录、文件化计划、长期任务、研究步骤、验证循环、需要在磁盘保存 notes/task_plan 的工作。Use this by default for non-trivial multi-step work that needs persistent planning, progress tracking, or durable notes on disk.
+  Trigger when a task will likely span multiple tool calls, research steps, verification loops, or enough context that the plan should not live only in transient chat memory.
 version: 0.1.0
 ---
 
