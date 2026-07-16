@@ -26,7 +26,7 @@ bash scripts/sync-codex.sh
 - 用户拥有的 `skills/` -> `$CODEX_HOME/skills/`
 - `config/config.toml.template` 中的便携偏好 -> `$CODEX_HOME/config.toml`
 
-脚本会先备份发生变化的 `AGENTS.md` 和 `config.toml`。Linux/macOS 默认安全合并配置，保留 MCP、密钥和机器路径；设置 `CONFIG_MODE=replace` 才会整份替换。skills 默认只覆盖同名文件，不删除目标机器额外的 skill；需要严格镜像用户 skills 时，Windows 用 `-MirrorSkills`，该模式仍会保留 `.system`。
+脚本会先备份发生变化的 `AGENTS.md` 和 `config.toml`。Linux/macOS 默认安全合并配置，保留 MCP、密钥和机器路径，并跳过 `[windows]`；设置 `CONFIG_MODE=replace` 才会整份替换。skills 默认只覆盖同名文件，不删除目标机器额外的 skill；需要严格镜像用户 skills 时，Windows 用 `-MirrorSkills`，该模式仍会保留 `.system`。
 
 ## 更新这个仓库
 

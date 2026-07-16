@@ -60,6 +60,8 @@ def parse_portable(lines):
         if not key_match:
             continue
         key = key_match.group(1)
+        if current == "windows" and os.name != "nt":
+            continue
         if allowed_key(current, key):
             values.setdefault(current, {})[key] = "{} = {}\n".format(
                 key, key_match.group(2)
