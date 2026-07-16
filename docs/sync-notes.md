@@ -27,4 +27,4 @@
 - skill 触发词只修改用户拥有的 skill；`.system` 和 plugin cache 只做清单，不复制或自动翻译。
 - GitHub 有真实内容变化时才提交和推送。
 - 远端采用非破坏同步：更新仓库已有的同名 skill，保留远端独有 skill。
-- Linux/macOS 使用 config merge，仅更新便携键值，跳过 `[windows]`，并保留 MCP、token、绝对路径和其他机器专属段落。
+- Linux/macOS 使用 config merge，仅更新便携键值，跳过 `[windows]`；脚本在写入前验证 MCP、token、绝对路径和其他机器专属记录完全不变。

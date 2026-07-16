@@ -70,6 +70,54 @@ def parse_portable(lines):
     return values, section_order
 
 
+def nonportable_records(lines, portable):
+    records = []
+    current = ""
+
+    for line in lines:
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#"):
+            continue
+
+        section_match = SECTION_RE.match(line)
+        if section_match:
+            current = section_match.group(1)
+            continue
+
+        key_match = KEY_RE.match(line)
+        if key_match and key_match.group(1) in portable.get(current, {}):
+            continue
+        records.append((current, stripped))
+
+    return sorted(records)
+
+
+def assert_portable_applied(portable, target_lines):
+    target_portable, _ = parse_portable(target_lines)
+    missing_or_changed = []
+    for section, values in portable.items():
+        for key, expected in values.items():
+            actual = target_portable.get(section, {}).get(key)
+            if actual != expected:
+                missing_or_changed.append("{}::{}".format(section or "<root>", key))
+    if missing_or_changed:
+        raise RuntimeError(
+            "Portable config verification failed for: {}".format(
+                ", ".join(missing_or_changed)
+            )
+        )
+
+
+def assert_nonportable_preserved(baseline_lines, result_lines, portable):
+    before = nonportable_records(baseline_lines, portable)
+    after = nonportable_records(result_lines, portable)
+    if before != after:
+        raise RuntimeError(
+            "Refusing config merge because non-portable settings would change"
+        )
+    return len(before)
+
+
 def current_section_map(lines):
     sections = {}
     current = ""
@@ -156,14 +204,36 @@ def main():
     parser.add_argument("template")
     parser.add_argument("target")
     parser.add_argument("--backup-suffix", default="")
+    parser.add_argument(
+        "--verify-against",
+        default="",
+        help="Verify target preservation against a pre-merge backup without writing.",
+    )
     args = parser.parse_args()
 
     with open(args.template, "r", encoding="utf-8-sig") as handle:
         source_lines = handle.readlines()
     with open(args.target, "r", encoding="utf-8-sig") as handle:
         target_lines = handle.readlines()
+    portable, _ = parse_portable(source_lines)
+
+    if args.verify_against:
+        with open(args.verify_against, "r", encoding="utf-8-sig") as handle:
+            baseline_lines = handle.readlines()
+        preserved_count = assert_nonportable_preserved(
+            baseline_lines, target_lines, portable
+        )
+        assert_portable_applied(portable, target_lines)
+        print(
+            "Verified portable preferences and preserved {} non-portable records".format(
+                preserved_count
+            )
+        )
+        return 0
 
     merged = merge_lines(source_lines, target_lines)
+    assert_nonportable_preserved(target_lines, merged, portable)
+    assert_portable_applied(portable, merged)
     original = "".join(target_lines)
     result = "".join(merged)
     if result == original:
