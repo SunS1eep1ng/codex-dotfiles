@@ -5,6 +5,7 @@ description: >-
   writing」项目的系统性模式分类。 检测并修复中文AI写作的典型模式；默认保量润色（避免为降AIGC大幅删短）； 含中英术语与缩写规范、会话记忆库（避免重复释义、滚动段落摘要防前后不一致）、 LaTeX
   源文件保护规则。支持：降低AI率、人工润色、降低AIGC、 humanize、去AI味、学术写作润色、论文降重、AIGC检测、AI痕迹消除、学术文本 人工化处理、AIGC检测报告。
   中文触发词：中文论文降AI率、降低AIGC检测率、去AI味、AIGC痕迹修复、毕业论文润色、中文学术改写、保留原意降重、查重前修改、论文不像AI。
+  Use for humanizing Chinese academic writing, lowering AIGC-detection risk, removing AI-style patterns, preserving meaning and length, and polishing theses before similarity or AI-content checks.
 ---
 
 # AIGC-Down：中文学术写作去AI味指南

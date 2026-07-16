@@ -47,7 +47,9 @@ New-Item -ItemType Directory -Path $skillsDst -Force | Out-Null
 
 if ($MirrorSkills) {
   Assert-ChildPath -Child $skillsDst -Parent $CodexHome
-  Get-ChildItem -LiteralPath $skillsDst -Force | Remove-Item -Recurse -Force
+  Get-ChildItem -LiteralPath $skillsDst -Force |
+    Where-Object { $_.Name -ne ".system" } |
+    Remove-Item -Recurse -Force
 }
 
 Get-ChildItem -LiteralPath $skillsSrc -Force | ForEach-Object {
@@ -56,6 +58,9 @@ Get-ChildItem -LiteralPath $skillsSrc -Force | ForEach-Object {
 
 Write-Host "Synced Codex dotfiles to $CodexHome"
 Write-Host "Backups use suffix .bak-$timestamp"
+if ($MirrorSkills) {
+  Write-Host "Mirrored user-owned skills; preserved the version-bound .system directory."
+}
 if (-not $SkipConfig) {
   Write-Host "Review local MCP secrets after config sync; real keys are intentionally not stored in this repo."
 }

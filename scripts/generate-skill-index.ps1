@@ -95,8 +95,6 @@ function Write-SkillMarkdown {
   $lines.Add("")
   $lines.Add($Intro)
   $lines.Add("")
-  $lines.Add("Generated: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss zzz')")
-  $lines.Add("")
   $lines.Add("Total: $($Records.Count)")
   $lines.Add("")
   $lines.Add("| Name | Description | Path | Size |")
@@ -107,7 +105,8 @@ function Write-SkillMarkdown {
     $path = Escape-MarkdownCell $record.Path
     $lines.Add("| $name | $description | ``$path`` | $($record.Bytes) |")
   }
-  Set-Content -LiteralPath $OutputPath -Value $lines -Encoding UTF8
+  $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+  [IO.File]::WriteAllText($OutputPath, ($lines -join "`n") + "`n", $utf8NoBom)
 }
 
 $skillsRoot = Join-Path $repoRoot "skills"
@@ -123,28 +122,43 @@ Write-SkillMarkdown `
   -Intro "Skills copied into this repo from `$CODEX_HOME/skills`. These are the files synced by the bootstrap scripts." `
   -Records $installed
 
-$pluginCache = Join-Path (Join-Path $CodexHome "plugins") "cache"
-$official = @()
-if (Test-Path -LiteralPath $pluginCache) {
-  $official = Get-ChildItem -Recurse -File -Filter "SKILL.md" -LiteralPath $pluginCache -Force |
-    ForEach-Object { Get-SkillRecord -File $_ -BasePath $pluginCache }
+$systemSkillsRoot = Join-Path (Join-Path $CodexHome "skills") ".system"
+$systemSkills = @()
+if (Test-Path -LiteralPath $systemSkillsRoot) {
+  $systemSkills = Get-ChildItem -Recurse -File -Filter "SKILL.md" -LiteralPath $systemSkillsRoot -Force |
+    ForEach-Object { Get-SkillRecord -File $_ -BasePath $CodexHome }
 }
+
+$pluginCache = Join-Path (Join-Path $CodexHome "plugins") "cache"
+$pluginSkills = @()
+if (Test-Path -LiteralPath $pluginCache) {
+  $pluginSkills = Get-ChildItem -Recurse -File -Filter "SKILL.md" -LiteralPath $pluginCache -Force |
+    ForEach-Object { Get-SkillRecord -File $_ -BasePath $CodexHome }
+}
+$managedSkills = @($systemSkills) + @($pluginSkills)
 
 Write-SkillMarkdown `
   -OutputPath (Join-Path $docsDir "official-plugin-skills.md") `
   -Title "Official And Plugin Skills Snapshot" `
-  -Intro "Skills discovered under `$CODEX_HOME/plugins/cache`. This is documentation only; plugin caches should be recreated by Codex/plugin install on each machine." `
-  -Records $official
+  -Intro "Skills discovered under `$CODEX_HOME/skills/.system` and `$CODEX_HOME/plugins/cache`. This is documentation only; each machine should recreate these version-bound skills through Codex and plugin installation." `
+  -Records $managedSkills
 
 $manifest = [PSCustomObject]@{
-  generatedAt = (Get-Date).ToString("o")
-  codexHome = $CodexHome
+  schemaVersion = 1
   installedSkillCount = $installed.Count
-  officialPluginSkillCount = $official.Count
+  systemSkillCount = $systemSkills.Count
+  pluginSkillCount = $pluginSkills.Count
+  officialPluginSkillCount = $managedSkills.Count
   installedSkills = $installed
-  officialPluginSkills = $official
+  systemSkills = $systemSkills
+  pluginSkills = $pluginSkills
+  officialPluginSkills = $managedSkills
 }
 
-$manifest | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath (Join-Path $docsDir "skills-manifest.json") -Encoding UTF8
+$manifestJson = $manifest | ConvertTo-Json -Depth 6
+$manifestPath = Join-Path $docsDir "skills-manifest.json"
+$utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+$manifestJson = $manifestJson.Replace("`r`n", "`n").Replace("`r", "`n")
+[IO.File]::WriteAllText($manifestPath, $manifestJson + "`n", $utf8NoBom)
 
 Write-Host "Generated skill docs in $docsDir"

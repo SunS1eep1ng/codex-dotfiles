@@ -30,3 +30,5 @@ Git 操作：可以在任务完成后自动 commit；push、PR、reset、rebase�
 如果 skill 的英文描述与中文任务语义匹配，也应使用该 skill。
 
 最终汇报只保留：做了什么、改了哪些文件、为什么这样做、验证结果、还剩什么风险或下一步。
+
+如果要使用 computer-use ，先请示（当系统是windows）
