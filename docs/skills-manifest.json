@@ -1,9 +1,9 @@
 {
     "schemaVersion":  1,
     "installedSkillCount":  88,
-    "systemSkillCount":  5,
+    "systemSkillCount":  6,
     "pluginSkillCount":  113,
-    "officialPluginSkillCount":  118,
+    "officialPluginSkillCount":  119,
     "installedSkills":  [
                             {
                                 "Name":  "academic-research-suite",
@@ -543,15 +543,21 @@
                          },
                          {
                              "Name":  "openai-docs",
-                             "Description":  "Use when the user asks how to build with OpenAI products or APIs, asks about Codex itself or choosing Codex surfaces, needs up-to-date official documentation with citations, help choosing the latest model for a use case, or model upgrade and prompt-upgrade guidance; use OpenAI docs MCP tools for non-Codex docs questions, use the Codex manual helper first for broad Codex self-knowledge, and restrict fallback browsing to official OpenAI domains.",
+                             "Description":  "Use when the user asks how to build with OpenAI products or APIs, asks about Codex itself or choosing Codex surfaces, needs up-to-date official documentation with citations, help choosing the latest model for a use case, latest/current/default-model prompting guidance, or model upgrade and prompt-upgrade guidance; use OpenAI docs MCP tools for non-Codex docs questions, use the Codex manual helper first for broad Codex self-knowledge, and restrict fallback browsing to official OpenAI domains.",
                              "Path":  "skills/.system/openai-docs/SKILL.md",
-                             "Bytes":  18914
+                             "Bytes":  22989
                          },
                          {
                              "Name":  "plugin-creator",
                              "Description":  "Create and scaffold plugin directories for Codex with a required `.codex-plugin/plugin.json`, optional plugin folders/files, valid manifest defaults, and personal-marketplace entries by default. Use when Codex needs to create a new personal plugin, add optional plugin structure, generate or update marketplace entries for plugin ordering and availability metadata, or update an existing local plugin during development with the CLI-driven cachebuster and reinstall flow.",
                              "Path":  "skills/.system/plugin-creator/SKILL.md",
                              "Bytes":  11283
+                         },
+                         {
+                             "Name":  "review-agent",
+                             "Description":  "Perform a read-only, defect-first review of a specified code change and return every actionable finding. Use when another agent delegates review of uncommitted changes, a base-branch diff, a commit, or custom review instructions.",
+                             "Path":  "skills/.system/review-agent/SKILL.md",
+                             "Bytes":  2718
                          },
                          {
                              "Name":  "skill-creator",
@@ -570,20 +576,20 @@
                          {
                              "Name":  "control-in-app-browser",
                              "Description":  "Control the in-app Browser for opening, navigating, inspecting visible or interactive page state, clicking, typing, screenshots, and local web testing. It can have existing signed-in sessions. For semantic operations on linked resources, prefer a purpose-built connector, API, or CLI when available.",
-                             "Path":  "plugins/cache/openai-bundled/browser/26.707.72221/skills/control-in-app-browser/SKILL.md",
-                             "Bytes":  10705
+                             "Path":  "plugins/cache/openai-bundled/browser/26.715.21425/skills/control-in-app-browser/SKILL.md",
+                             "Bytes":  11061
                          },
                          {
                              "Name":  "control-chrome",
                              "Description":  "Control the user\u0027s Chrome browser for tasks that depend on existing Chrome state: tabs, logged-in sessions, or extensions. Prefer purpose-built connectors, APIs, or CLIs when available.",
-                             "Path":  "plugins/cache/openai-bundled/chrome/26.707.72221/skills/control-chrome/SKILL.md",
-                             "Bytes":  10583
+                             "Path":  "plugins/cache/openai-bundled/chrome/26.715.21425/skills/control-chrome/SKILL.md",
+                             "Bytes":  10939
                          },
                          {
                              "Name":  "computer-use",
                              "Description":  "Control Windows apps from ChatGPT",
-                             "Path":  "plugins/cache/openai-bundled/computer-use/26.707.72221/skills/computer-use/SKILL.md",
-                             "Bytes":  2863
+                             "Path":  "plugins/cache/openai-bundled/computer-use/26.715.21425/skills/computer-use/SKILL.md",
+                             "Bytes":  1619
                          },
                          {
                              "Name":  "latex-compile",
@@ -612,20 +618,20 @@
                          {
                              "Name":  "sites-building",
                              "Description":  "Use Sites to build websites, including landing pages, portfolios, dashboards, portals, trackers, hubs, and internal tools. Always use Sites when the project contains `.openai/hosting.json`.",
-                             "Path":  "plugins/cache/openai-bundled/sites/0.1.27/skills/sites-building/SKILL.md",
+                             "Path":  "plugins/cache/openai-bundled/sites/0.1.30/skills/sites-building/SKILL.md",
                              "Bytes":  15144
                          },
                          {
                              "Name":  "sites-hosting",
                              "Description":  "Host websites with Sites. Always use after `sites-building`, and use for website publishing, deployment, hosting management, or projects containing `.openai/hosting.json`.",
-                             "Path":  "plugins/cache/openai-bundled/sites/0.1.27/skills/sites-hosting/SKILL.md",
-                             "Bytes":  4376
+                             "Path":  "plugins/cache/openai-bundled/sites/0.1.30/skills/sites-hosting/SKILL.md",
+                             "Bytes":  4567
                          },
                          {
                              "Name":  "visualize",
                              "Description":  "Create visualizations and interactive tools in conversation. Use when asked to show how something works, make simulators or labs, maps, plots, charts or graphs, comparisons, scenarios, adjustable inputs, and exploration.",
-                             "Path":  "plugins/cache/openai-bundled/visualize/1.0.11/skills/visualize/SKILL.md",
-                             "Bytes":  19137
+                             "Path":  "plugins/cache/openai-bundled/visualize/1.0.12/skills/visualize/SKILL.md",
+                             "Bytes":  19871
                          },
                          {
                              "Name":  "frontend-app-builder",
@@ -1002,67 +1008,67 @@
                          {
                              "Name":  "figma-code-connect",
                              "Description":  "Creates and maintains Figma Code Connect template files that map Figma components to code snippets. Use when the user mentions Code Connect, Figma component mapping, design-to-code translation, or asks to create/update .figma.ts or .figma.js files.",
-                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.14/skills/figma-code-connect/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-code-connect/SKILL.md",
                              "Bytes":  25657
                          },
                          {
                              "Name":  "figma-create-new-file",
                              "Description":  "**MANDATORY prerequisite** — you MUST invoke this skill BEFORE every `create_new_file` tool call. NEVER call `create_new_file` directly without loading this skill first. Trigger whenever the user wants a new blank Figma file — a new design, FigJam, or Slides file — or when you need a fresh file before calling `use_figma`. Usage — /figma-create-new-file [editorType] [fileName] (e.g. /figma-create-new-file figjam My Whiteboard, /figma-create-new-file slides Q3 Review)",
-                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.14/skills/figma-create-new-file/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-create-new-file/SKILL.md",
                              "Bytes":  3946
                          },
                          {
                              "Name":  "figma-generate-design",
                              "Description":  "Use this skill alongside figma-use when the task involves translating an application page, view, or multi-section layout into Figma. Triggers: \u0027write to Figma\u0027, \u0027create in Figma from code\u0027, \u0027push page to Figma\u0027, \u0027take this app/page and build it in Figma\u0027, \u0027create a screen\u0027, \u0027build a landing page in Figma\u0027, \u0027update the Figma screen to match code\u0027, \u0027convert this modal/dialog/drawer/panel to Figma\u0027. This is the preferred workflow skill whenever the user wants to build or update a full page, modal, dialog, drawer, sidebar, panel, or any composed multi-section view in Figma from code or a description. Discovers design system components, variables, and styles from Code Connect files, existing screens, and library search, then imports them and assembles views incrementally section-by-section using design system tokens instead of hardcoded values.",
-                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.14/skills/figma-generate-design/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-generate-design/SKILL.md",
                              "Bytes":  33761
                          },
                          {
                              "Name":  "figma-generate-diagram",
                              "Description":  "MANDATORY prerequisite — load this skill BEFORE every `generate_diagram` tool call. NEVER call `generate_diagram` directly without loading this skill first. Trigger whenever the user asks to create, generate, draw, render, sketch, or build a diagram — flowchart, architecture diagram, sequence diagram, ERD or entity-relationship diagram, state diagram or state machine, gantt chart, or timeline. Also trigger when the user mentions Mermaid syntax or wants a system architecture, decision tree, dependency graph, API call flow, auth handshake, schema, or pipeline visualized in FigJam. Routes to type-specific guidance, sets universal Mermaid constraints, and tells you when to use a different diagram type or skip the tool entirely (mindmaps, pie charts, class diagrams, etc.).",
-                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.14/skills/figma-generate-diagram/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-generate-diagram/SKILL.md",
                              "Bytes":  10272
                          },
                          {
                              "Name":  "figma-generate-library",
                              "Description":  "Build or update a professional-grade design system in Figma from a codebase. Use when the user wants to create variables/tokens, build component libraries, create individual components with proper variant sets and variable bindings, set up theming (light/dark modes), document foundations, or reconcile gaps between code and Figma. Also use when the user asks to create or generate any component in Figma — even a single one — since components require proper variable foundations, variant states, and design token bindings to be production-quality. This skill teaches WHAT to build and in WHAT ORDER — it complements the `figma-use` skill which teaches HOW to call the Plugin API. Both skills should be loaded together.",
-                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.14/skills/figma-generate-library/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-generate-library/SKILL.md",
                              "Bytes":  22877
                          },
                          {
                              "Name":  "figma-implement-motion",
                              "Description":  "Translates Figma motion and animations into production-ready application code. Use when implementing animation/motion from a Figma design — user mentions \"implement this motion\", \"add animation from Figma\", \"animate this component\", provides a Figma URL whose node is animated, or when `get_design_context` returns motion data or instructs you to call `get_motion_context`.",
-                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.14/skills/figma-implement-motion/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-implement-motion/SKILL.md",
                              "Bytes":  22558
                          },
                          {
                              "Name":  "figma-swiftui",
                              "Description":  "SwiftUI ↔ Figma translation. Use whenever the user mentions Swift, SwiftUI, iOS, iPhone, or iPad — in EITHER direction — translating a Figma design into SwiftUI (design → code), or pushing SwiftUI views / screens / tokens back into a Figma file (code → design). Triggers on phrases like \u0027implement this Figma design in SwiftUI\u0027, \u0027build this screen in Swift\u0027, \u0027push this SwiftUI view to Figma\u0027, \u0027mirror my Swift code in a Figma file\u0027, or whenever a Figma URL appears alongside `.swift` files / an `.xcodeproj`. Routes to a direction-specific reference doc; loads alongside `figma-use` for the code → design path.",
-                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.14/skills/figma-swiftui/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-swiftui/SKILL.md",
                              "Bytes":  4049
                          },
                          {
                              "Name":  "figma-use",
                              "Description":  "**MANDATORY prerequisite** — you MUST invoke this skill BEFORE every `use_figma` tool call. NEVER call `use_figma` directly without loading this skill first. Skipping it causes common, hard-to-debug failures. Trigger whenever the user wants to perform a write action or a unique read action that requires JavaScript execution in the Figma file context — e.g. create/edit/delete nodes, set up variables or tokens, build components and variants, modify auto-layout or fills, bind variables to properties, or inspect file structure programmatically.",
-                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.14/skills/figma-use/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-use/SKILL.md",
                              "Bytes":  34434
                          },
                          {
                              "Name":  "figma-use-figjam",
                              "Description":  "This skill helps agents use Figma\u0027s use_figma MCP tool in the FigJam context. Can be used alongside figma-use which has foundational context for using the use_figma tool.",
-                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.14/skills/figma-use-figjam/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-use-figjam/SKILL.md",
                              "Bytes":  7089
                          },
                          {
                              "Name":  "figma-use-motion",
                              "Description":  "Motion / animation context for the `use_figma` MCP tool — animating Figma nodes via manual keyframes, animation styles, easing, and timeline duration. Load alongside figma-use whenever a task involves adding, editing, or inspecting animation on a node.",
-                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.14/skills/figma-use-motion/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-use-motion/SKILL.md",
                              "Bytes":  6921
                          },
                          {
                              "Name":  "figma-use-slides",
                              "Description":  "This skill helps agents use Figma\u0027s use_figma MCP tool in the Slides context. Can be used alongside figma-use which has foundational context for using the use_figma tool.",
-                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.14/skills/figma-use-slides/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-use-slides/SKILL.md",
                              "Bytes":  22155
                          },
                          {
@@ -1255,15 +1261,21 @@
                                  },
                                  {
                                      "Name":  "openai-docs",
-                                     "Description":  "Use when the user asks how to build with OpenAI products or APIs, asks about Codex itself or choosing Codex surfaces, needs up-to-date official documentation with citations, help choosing the latest model for a use case, or model upgrade and prompt-upgrade guidance; use OpenAI docs MCP tools for non-Codex docs questions, use the Codex manual helper first for broad Codex self-knowledge, and restrict fallback browsing to official OpenAI domains.",
+                                     "Description":  "Use when the user asks how to build with OpenAI products or APIs, asks about Codex itself or choosing Codex surfaces, needs up-to-date official documentation with citations, help choosing the latest model for a use case, latest/current/default-model prompting guidance, or model upgrade and prompt-upgrade guidance; use OpenAI docs MCP tools for non-Codex docs questions, use the Codex manual helper first for broad Codex self-knowledge, and restrict fallback browsing to official OpenAI domains.",
                                      "Path":  "skills/.system/openai-docs/SKILL.md",
-                                     "Bytes":  18914
+                                     "Bytes":  22989
                                  },
                                  {
                                      "Name":  "plugin-creator",
                                      "Description":  "Create and scaffold plugin directories for Codex with a required `.codex-plugin/plugin.json`, optional plugin folders/files, valid manifest defaults, and personal-marketplace entries by default. Use when Codex needs to create a new personal plugin, add optional plugin structure, generate or update marketplace entries for plugin ordering and availability metadata, or update an existing local plugin during development with the CLI-driven cachebuster and reinstall flow.",
                                      "Path":  "skills/.system/plugin-creator/SKILL.md",
                                      "Bytes":  11283
+                                 },
+                                 {
+                                     "Name":  "review-agent",
+                                     "Description":  "Perform a read-only, defect-first review of a specified code change and return every actionable finding. Use when another agent delegates review of uncommitted changes, a base-branch diff, a commit, or custom review instructions.",
+                                     "Path":  "skills/.system/review-agent/SKILL.md",
+                                     "Bytes":  2718
                                  },
                                  {
                                      "Name":  "skill-creator",
@@ -1280,20 +1292,20 @@
                                  {
                                      "Name":  "control-in-app-browser",
                                      "Description":  "Control the in-app Browser for opening, navigating, inspecting visible or interactive page state, clicking, typing, screenshots, and local web testing. It can have existing signed-in sessions. For semantic operations on linked resources, prefer a purpose-built connector, API, or CLI when available.",
-                                     "Path":  "plugins/cache/openai-bundled/browser/26.707.72221/skills/control-in-app-browser/SKILL.md",
-                                     "Bytes":  10705
+                                     "Path":  "plugins/cache/openai-bundled/browser/26.715.21425/skills/control-in-app-browser/SKILL.md",
+                                     "Bytes":  11061
                                  },
                                  {
                                      "Name":  "control-chrome",
                                      "Description":  "Control the user\u0027s Chrome browser for tasks that depend on existing Chrome state: tabs, logged-in sessions, or extensions. Prefer purpose-built connectors, APIs, or CLIs when available.",
-                                     "Path":  "plugins/cache/openai-bundled/chrome/26.707.72221/skills/control-chrome/SKILL.md",
-                                     "Bytes":  10583
+                                     "Path":  "plugins/cache/openai-bundled/chrome/26.715.21425/skills/control-chrome/SKILL.md",
+                                     "Bytes":  10939
                                  },
                                  {
                                      "Name":  "computer-use",
                                      "Description":  "Control Windows apps from ChatGPT",
-                                     "Path":  "plugins/cache/openai-bundled/computer-use/26.707.72221/skills/computer-use/SKILL.md",
-                                     "Bytes":  2863
+                                     "Path":  "plugins/cache/openai-bundled/computer-use/26.715.21425/skills/computer-use/SKILL.md",
+                                     "Bytes":  1619
                                  },
                                  {
                                      "Name":  "latex-compile",
@@ -1322,20 +1334,20 @@
                                  {
                                      "Name":  "sites-building",
                                      "Description":  "Use Sites to build websites, including landing pages, portfolios, dashboards, portals, trackers, hubs, and internal tools. Always use Sites when the project contains `.openai/hosting.json`.",
-                                     "Path":  "plugins/cache/openai-bundled/sites/0.1.27/skills/sites-building/SKILL.md",
+                                     "Path":  "plugins/cache/openai-bundled/sites/0.1.30/skills/sites-building/SKILL.md",
                                      "Bytes":  15144
                                  },
                                  {
                                      "Name":  "sites-hosting",
                                      "Description":  "Host websites with Sites. Always use after `sites-building`, and use for website publishing, deployment, hosting management, or projects containing `.openai/hosting.json`.",
-                                     "Path":  "plugins/cache/openai-bundled/sites/0.1.27/skills/sites-hosting/SKILL.md",
-                                     "Bytes":  4376
+                                     "Path":  "plugins/cache/openai-bundled/sites/0.1.30/skills/sites-hosting/SKILL.md",
+                                     "Bytes":  4567
                                  },
                                  {
                                      "Name":  "visualize",
                                      "Description":  "Create visualizations and interactive tools in conversation. Use when asked to show how something works, make simulators or labs, maps, plots, charts or graphs, comparisons, scenarios, adjustable inputs, and exploration.",
-                                     "Path":  "plugins/cache/openai-bundled/visualize/1.0.11/skills/visualize/SKILL.md",
-                                     "Bytes":  19137
+                                     "Path":  "plugins/cache/openai-bundled/visualize/1.0.12/skills/visualize/SKILL.md",
+                                     "Bytes":  19871
                                  },
                                  {
                                      "Name":  "frontend-app-builder",
@@ -1712,67 +1724,67 @@
                                  {
                                      "Name":  "figma-code-connect",
                                      "Description":  "Creates and maintains Figma Code Connect template files that map Figma components to code snippets. Use when the user mentions Code Connect, Figma component mapping, design-to-code translation, or asks to create/update .figma.ts or .figma.js files.",
-                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.14/skills/figma-code-connect/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-code-connect/SKILL.md",
                                      "Bytes":  25657
                                  },
                                  {
                                      "Name":  "figma-create-new-file",
                                      "Description":  "**MANDATORY prerequisite** — you MUST invoke this skill BEFORE every `create_new_file` tool call. NEVER call `create_new_file` directly without loading this skill first. Trigger whenever the user wants a new blank Figma file — a new design, FigJam, or Slides file — or when you need a fresh file before calling `use_figma`. Usage — /figma-create-new-file [editorType] [fileName] (e.g. /figma-create-new-file figjam My Whiteboard, /figma-create-new-file slides Q3 Review)",
-                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.14/skills/figma-create-new-file/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-create-new-file/SKILL.md",
                                      "Bytes":  3946
                                  },
                                  {
                                      "Name":  "figma-generate-design",
                                      "Description":  "Use this skill alongside figma-use when the task involves translating an application page, view, or multi-section layout into Figma. Triggers: \u0027write to Figma\u0027, \u0027create in Figma from code\u0027, \u0027push page to Figma\u0027, \u0027take this app/page and build it in Figma\u0027, \u0027create a screen\u0027, \u0027build a landing page in Figma\u0027, \u0027update the Figma screen to match code\u0027, \u0027convert this modal/dialog/drawer/panel to Figma\u0027. This is the preferred workflow skill whenever the user wants to build or update a full page, modal, dialog, drawer, sidebar, panel, or any composed multi-section view in Figma from code or a description. Discovers design system components, variables, and styles from Code Connect files, existing screens, and library search, then imports them and assembles views incrementally section-by-section using design system tokens instead of hardcoded values.",
-                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.14/skills/figma-generate-design/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-generate-design/SKILL.md",
                                      "Bytes":  33761
                                  },
                                  {
                                      "Name":  "figma-generate-diagram",
                                      "Description":  "MANDATORY prerequisite — load this skill BEFORE every `generate_diagram` tool call. NEVER call `generate_diagram` directly without loading this skill first. Trigger whenever the user asks to create, generate, draw, render, sketch, or build a diagram — flowchart, architecture diagram, sequence diagram, ERD or entity-relationship diagram, state diagram or state machine, gantt chart, or timeline. Also trigger when the user mentions Mermaid syntax or wants a system architecture, decision tree, dependency graph, API call flow, auth handshake, schema, or pipeline visualized in FigJam. Routes to type-specific guidance, sets universal Mermaid constraints, and tells you when to use a different diagram type or skip the tool entirely (mindmaps, pie charts, class diagrams, etc.).",
-                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.14/skills/figma-generate-diagram/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-generate-diagram/SKILL.md",
                                      "Bytes":  10272
                                  },
                                  {
                                      "Name":  "figma-generate-library",
                                      "Description":  "Build or update a professional-grade design system in Figma from a codebase. Use when the user wants to create variables/tokens, build component libraries, create individual components with proper variant sets and variable bindings, set up theming (light/dark modes), document foundations, or reconcile gaps between code and Figma. Also use when the user asks to create or generate any component in Figma — even a single one — since components require proper variable foundations, variant states, and design token bindings to be production-quality. This skill teaches WHAT to build and in WHAT ORDER — it complements the `figma-use` skill which teaches HOW to call the Plugin API. Both skills should be loaded together.",
-                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.14/skills/figma-generate-library/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-generate-library/SKILL.md",
                                      "Bytes":  22877
                                  },
                                  {
                                      "Name":  "figma-implement-motion",
                                      "Description":  "Translates Figma motion and animations into production-ready application code. Use when implementing animation/motion from a Figma design — user mentions \"implement this motion\", \"add animation from Figma\", \"animate this component\", provides a Figma URL whose node is animated, or when `get_design_context` returns motion data or instructs you to call `get_motion_context`.",
-                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.14/skills/figma-implement-motion/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-implement-motion/SKILL.md",
                                      "Bytes":  22558
                                  },
                                  {
                                      "Name":  "figma-swiftui",
                                      "Description":  "SwiftUI ↔ Figma translation. Use whenever the user mentions Swift, SwiftUI, iOS, iPhone, or iPad — in EITHER direction — translating a Figma design into SwiftUI (design → code), or pushing SwiftUI views / screens / tokens back into a Figma file (code → design). Triggers on phrases like \u0027implement this Figma design in SwiftUI\u0027, \u0027build this screen in Swift\u0027, \u0027push this SwiftUI view to Figma\u0027, \u0027mirror my Swift code in a Figma file\u0027, or whenever a Figma URL appears alongside `.swift` files / an `.xcodeproj`. Routes to a direction-specific reference doc; loads alongside `figma-use` for the code → design path.",
-                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.14/skills/figma-swiftui/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-swiftui/SKILL.md",
                                      "Bytes":  4049
                                  },
                                  {
                                      "Name":  "figma-use",
                                      "Description":  "**MANDATORY prerequisite** — you MUST invoke this skill BEFORE every `use_figma` tool call. NEVER call `use_figma` directly without loading this skill first. Skipping it causes common, hard-to-debug failures. Trigger whenever the user wants to perform a write action or a unique read action that requires JavaScript execution in the Figma file context — e.g. create/edit/delete nodes, set up variables or tokens, build components and variants, modify auto-layout or fills, bind variables to properties, or inspect file structure programmatically.",
-                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.14/skills/figma-use/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-use/SKILL.md",
                                      "Bytes":  34434
                                  },
                                  {
                                      "Name":  "figma-use-figjam",
                                      "Description":  "This skill helps agents use Figma\u0027s use_figma MCP tool in the FigJam context. Can be used alongside figma-use which has foundational context for using the use_figma tool.",
-                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.14/skills/figma-use-figjam/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-use-figjam/SKILL.md",
                                      "Bytes":  7089
                                  },
                                  {
                                      "Name":  "figma-use-motion",
                                      "Description":  "Motion / animation context for the `use_figma` MCP tool — animating Figma nodes via manual keyframes, animation styles, easing, and timeline duration. Load alongside figma-use whenever a task involves adding, editing, or inspecting animation on a node.",
-                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.14/skills/figma-use-motion/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-use-motion/SKILL.md",
                                      "Bytes":  6921
                                  },
                                  {
                                      "Name":  "figma-use-slides",
                                      "Description":  "This skill helps agents use Figma\u0027s use_figma MCP tool in the Slides context. Can be used alongside figma-use which has foundational context for using the use_figma tool.",
-                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.14/skills/figma-use-slides/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-use-slides/SKILL.md",
                                      "Bytes":  22155
                                  },
                                  {
