@@ -1,104 +1,114 @@
-# 创建小程序项目流程
+# 创建小程序 / 小游戏项目流程
+
+本流程对**小程序与小游戏同等适用**；用 `compileType` 区分（`miniprogram` / `game`），用 `get_user_appids --type` 过滤 AppID。
+
+**不是**独立 scene：走完后按下方「移交」进入目标 scene。
 
 ## 前置条件
 
-- 用户已登录（`check_wechatide_status` 返回内容中有 `openid`）
-- 微信开发者工具 CLI 可用
+须已由根入口完成（本流程内不要重复「当次会话首次」以外的登录/版本检查）：
+
+- `check_wechatide_status --skill-version <skill.yaml version>` 返回 `loginExpired: false` 且 `versionRelation: equal`
+- `wechatide` CLI 可用
 
 ## 第一步：获取 AppID
 
-每个小程序项目必须绑定一个 AppID。获取方式：
+每个项目必须绑定一个 AppID：
 
 ```bash
-wechatide -c <clientName> -t get_user_appids
+wechatide -c <clientName> get_user_appids
+wechatide -c <clientName> get_user_appids --type miniprogram
+wechatide -c <clientName> get_user_appids --type minigame
 ```
 
-返回当前登录用户可管理的全部 AppID 列表。用户需要从中选择一个，或提供已知的 AppID。
-
-**注意**：
-- 没有 AppID 无法创建正式项目
-- 测试号可在微信公众平台申请
+让用户从列表选择，或使用其已知的 AppID。没有 AppID 无法创建正式项目；测试号可在微信公众平台申请。
 
 ## 第二步：确认云开发环境（如需要）
 
-如果项目使用云开发，需要获取云环境 ID：
+项目要用云开发时，用已选 AppID 列环境（此时本地目录可能还不存在，**优先只传 `appid`**）：
 
 ```bash
-wechatide -c <clientName> -t cloud_env_list --project <project> --appid <appid>
+wechatide -c <clientName> cloud_env_list --appid <appid>
 ```
 
-**注意**：
-- 云环境需要在微信公众平台预先开通
-- 一个 AppID 可以有多个云环境（如 dev、prod）
-- 云环境 ID 格式通常为 `cloud1-xxxx` 或自定义名称
+- 云环境需在公众平台预先开通
+- 一个 AppID 可有多个环境；`env` 不明确时禁止自动挑选
+- 后续云操作见 `skills/cloudbase-operator/SKILL.md`
 
-## 第三步：project.config.json
+## 第三步：准备目录与 `project.config.json`
 
-每个小程序项目根目录必须有 `project.config.json`，它是 微信开发者工具 识别和管理项目的核心配置文件。
+1. 在用户指定的本地路径创建项目目录与最小可运行文件结构（见下方）。
+2. 写入 / 补全 `project.config.json`（至少含有效 `appid`、`projectname`、`compileType`）。
+   - 小程序：`compileType` 为 `miniprogram`
+   - 小游戏：`compileType` 为 `game`
+3. **字段含义、private/common 写入规则、常见开关**：一律按 `skills/project-config/SKILL.md`（及 `references/project-config-fields.md`）处理，本指南不复述字段表。
+4. 需要云函数目录时，在 common 配置中设置 `cloudfunctionRoot`（同上，走 project-config）。
 
-### 必填字段
+## 第四步：导入项目列表
 
-```json
-{
-  "appid": "wxxxxxxxxxxx",
-  "projectname": "my-miniprogram",
-  "compileType": "miniprogram",
-  "libVersion": "latest",
-  "setting": {
-    "urlCheck": true,
-    "es6": true,
-    "enhance": true,
-    "postcss": true,
-    "minified": true
-  }
-}
-```
-
-### 字段说明
-
-| 字段 | 说明 |
-|------|------|
-| `appid` | 小程序 AppID，必填 |
-| `projectname` | 项目显示名称 |
-| `compileType` | 编译类型：`miniprogram`（小程序）、`game`（小游戏）、`plugin`（插件） |
-| `libVersion` | 基础库版本，使用 `"latest"` 即可（始终使用最新稳定版） |
-| `setting` | 编译设置（ES6 转 ES5、样式补全、代码压缩等） |
-| `cloudfunctionRoot` | 云函数目录（使用云开发时填写，如 `"cloudfunctions/"`） |
-| `miniprogramRoot` | 小程序代码根目录（默认为项目根目录） |
-
-### 私有配置 project.private.config.json
-
-开发者个人设置（如自定义编译条件、本地调试端口等）存放在 `project.private.config.json`，不应提交到版本控制。
-
-## 第四步：打开项目
-
-项目目录和配置准备好后，通过 CLI 打开：
+目录与配置就绪后，**调用 `project_import` 写入 WechatIDE 项目列表**（不开窗口）：
 
 ```bash
-wechatide -c <clientName> -t open_project_window --project <project>
+wechatide -c <clientName> project_import --project <project>
 ```
 
-这会自动导入项目到 DevTools 项目列表并打开项目窗口。
+- `<project>` 为项目本地绝对路径
+- 已在列表中时返回 `alreadyImported: true`，视为成功
+- 工具说明见 `skills/project-manager/SKILL.md`
+- 失败（`PROJECT_PATH_NOT_FOUND` / `PROJECT_CONFIG_JSON_ERROR` / `APPID_ERROR`）→ 按 [project-tool-error-guide.md](project-tool-error-guide.md) **后置**修复后重试；勿改成调用前预检
+
+## 移交（导入成功后）
+
+按根 SKILL「跨 scene 移交」带上至少：
+
+- `project`：刚导入的本地绝对路径
+- `confirmed`：已登录且版本对齐、已 `project_import`（或 `alreadyImported`）、`appid` / `compileType`；若已选云环境则含 `env`
+- `nextScene` 与附加字段按下表
+
+| 用户下一步目标 | nextScene | 还需 |
+|----------------|-----------|------|
+| 打开模拟器做编译 / 调试 / 自动化 | `initializer` | 说明需 `open_project_window`；再交 compiler / debugger / automator |
+| 预览 / 上传 | `previewer` | 可不打开窗口 |
+| 云函数 / 云库 / 云存储 | `cloudbase-operator` | `appid`、`env`（未定则作 blocker） |
+| 仅留在列表 | 结束 | 说明已导入，无需开窗 |
 
 ## 最小可运行项目结构
 
+### 小程序（`compileType: miniprogram`）
+
 ```
 project/
-├── project.config.json    # 项目配置（必须）
-├── app.json               # 小程序全局配置（必须）
-├── app.js                 # 小程序入口逻辑
-├── app.wxss               # 全局样式
+├── project.config.json    # 必须；写法见 project-config
+├── app.json               # 必须，至少含 pages
+├── app.js
+├── app.wxss
 └── pages/
     └── index/
-        ├── index.json     # 页面配置
-        ├── index.wxml     # 页面模板
-        ├── index.wxss     # 页面样式
-        └── index.js       # 页面逻辑
+        ├── index.json
+        ├── index.wxml
+        ├── index.wxss
+        └── index.js
 ```
 
-## 常见问题
+`app.json` 至少需要类似：`{"pages":["pages/index/index"]}`。
 
-- **AppID 无效**：确认 AppID 对应的小程序已在公众平台注册，且当前登录账号有管理权限
-- **项目路径不存在**：`open_project_window` 要求路径是已存在的目录
-- **缺少 app.json**：DevTools 打开项目后会报错，至少需要 `{"pages":["pages/index/index"]}`
-- **云函数部署失败**：确认 `cloudfunctionRoot` 配置正确，且云环境 ID 有效
+### 小游戏（`compileType: game`）
+
+```
+project/
+├── project.config.json    # 必须；compileType 为 game
+├── game.json              # 小游戏配置
+└── game.js                # 小游戏入口
+```
+
+具体文件以用户模板 / 官方示例为准；配置字段仍走 `project-config`。
+
+## 失败快表
+
+| 情况 | 处理 |
+|------|------|
+| `loginExpired: true` / `versionRelation` 为 `skip_check` / `versionRelation` 非 `equal` | 回到根入口，勿在本指南内继续创建 |
+| `PROJECT_*` / `APPID_ERROR` | [project-tool-error-guide.md](project-tool-error-guide.md) |
+| AppID 无效 / 无权限 | 换有权限的 AppID 或重新 `login`；勿死循环 |
+| 缺入口文件 | 补齐小程序 `app.json` 或小游戏 `game.json` / `game.js` 后再导入或开窗 |
+| 云相关失败 | 核对 `cloudfunctionRoot` 与 env（见 cloudbase-operator） |

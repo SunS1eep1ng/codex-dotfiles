@@ -6,6 +6,7 @@ param(
 
 $ErrorActionPreference = "Stop"
 $repoRoot = Resolve-Path (Join-Path $PSScriptRoot "..")
+. (Join-Path $PSScriptRoot "skill-export-policy.ps1")
 
 function Get-RelativePathCompat {
   param(
@@ -23,6 +24,10 @@ function Test-ExcludedSkillFile {
     [string]$RelativePath,
     [System.IO.FileInfo]$File
   )
+
+  if (Test-PathUnderTimestampedSkillBackup -RelativePath $RelativePath) {
+    return $true
+  }
 
   $excludedDirectories = @(
     ".git",

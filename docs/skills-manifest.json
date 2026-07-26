@@ -2,8 +2,8 @@
     "schemaVersion":  1,
     "installedSkillCount":  88,
     "systemSkillCount":  6,
-    "pluginSkillCount":  113,
-    "officialPluginSkillCount":  119,
+    "pluginSkillCount":  114,
+    "officialPluginSkillCount":  120,
     "installedSkills":  [
                             {
                                 "Name":  "academic-research-suite",
@@ -253,9 +253,9 @@
                             },
                             {
                                 "Name":  "researchwrite",
-                                "Description":  "Proposal-first scientific writing pipeline. Three modes (compose/revise/hybrid) with four-layer QA pipeline. Enforces evidence-before-prose, argument-before-sections, and contracts-before-paragraphs. 中文触发词：开题报告、研究方案、proposal、基金申请、课题设计、先证据后写作、科研写作QA、章节契约、研究计划、项目申请书。",
+                                "Description":  "Proposal-first scientific writing pipeline. Three modes (compose/revise/hybrid) with four-layer QA pipeline. Enforces evidence-before-prose, argument-before-sections, and contracts-before-paragraphs. Use when drafting or revising research proposals, grant applications, study plans, or evidence-first scientific writing. 中文触发词：开题报告、研究方案、proposal、基金申请、课题设计、先证据后写作、科研写作QA、章节契约、研究计划、项目申请书。",
                                 "Path":  "skills/nature-proposal-writer/SKILL.md",
-                                "Bytes":  5539
+                                "Bytes":  5664
                             },
                             {
                                 "Name":  "nature-reader",
@@ -469,57 +469,57 @@
                             },
                             {
                                 "Name":  "wechatide-skill",
-                                "Description":  "微信开发者工具任务执行的根入口。用于在执行前先完成环境检查，再路由到预览、自动化、调试与云相关操作。Root entrypoint for WeChat DevTools tasks. Use for environment checks and routing to preview, UI automation, debugging, CloudBase, and related mini-program workflows.",
+                                "Description":  "微信开发者工具任务根入口。先完成环境与登录检查，再路由到创建项目、初始化、项目管理、项目配置、 编译、预览、页面自动化、调试或云开发操作。适用于小程序与小游戏。用户提到微信开发者工具、 小程序/小游戏模拟器、新建项目、预览上传、自动化点击、console/network、云函数/云数据库时使用。 Use for WeChat DevTools tasks involving mini-program or mini-game setup, compilation, preview, UI automation, debugging, or CloudBase operations.",
                                 "Path":  "skills/wechatide-skill/SKILL.md",
-                                "Bytes":  9701
+                                "Bytes":  10572
                             },
                             {
                                 "Name":  "automator",
-                                "Description":  "负责页面操作：点击、输入、滚动、截图、验证。Use for deterministic mini-program page interactions such as clicking, typing, scrolling, navigation, screenshots, and UI state verification.",
+                                "Description":  "小程序/小游戏页面自动化：点击、输入、滚动、导航、断言、生成 automator 脚本。 用户要点按钮、填表、页面验证、自动化测试时使用。不负责 console/network 深度排查。 Use for deterministic mini-program or mini-game page interactions such as clicking, typing, scrolling, navigation, assertions, and UI automation tests.",
                                 "Path":  "skills/wechatide-skill/skills/automator/SKILL.md",
-                                "Bytes":  9981
+                                "Bytes":  3387
                             },
                             {
                                 "Name":  "cloudbase-operator",
-                                "Description":  "负责云操作：云环境、云函数、云数据库、云存储。Use for CloudBase environments, cloud functions, cloud databases, cloud storage, deployment, and resource inspection.",
+                                "Description":  "小程序/小游戏云开发操作：云环境、云函数部署、云数据库、云存储。 用户提到云环境、云函数、集合/文档、云存储上传下载时使用。 Use for CloudBase environments, cloud functions, cloud databases, collections or documents, and cloud storage operations.",
                                 "Path":  "skills/wechatide-skill/skills/cloudbase-operator/SKILL.md",
-                                "Bytes":  14071
+                                "Bytes":  3300
                             },
                             {
                                 "Name":  "compiler",
-                                "Description":  "负责编译：项目编译、单文件编译、编译到指定页面、构建 npm、刷新模拟器。Use for WeChat mini-program compilation, single-file checks, page-targeted builds, npm builds, simulator refresh, and compile-result inspection.",
+                                "Description":  "小程序/小游戏编译与模拟器刷新：打开指定页面、编译 WXML/WXSS、构建 npm、刷新模拟器。 小游戏以刷新模拟器与构建 npm 为主；单文件 WXML/WXSS 编译仅小程序页面适用。 用户说编译一下、跳到某页看效果、构建 npm、模拟器没刷新时使用。 Use for compiling WeChat mini-programs or mini-games, opening a target page, building npm dependencies, or refreshing the simulator.",
                                 "Path":  "skills/wechatide-skill/skills/compiler/SKILL.md",
-                                "Bytes":  4868
+                                "Bytes":  2577
                             },
                             {
                                 "Name":  "debugger",
-                                "Description":  "负责排查：查日志、查运行时、定位问题原因，也包括模拟器相关的状态检查与刷新。Use for mini-program debugging, console and network logs, runtime diagnosis, simulator state checks, refresh validation, and root-cause analysis.",
+                                "Description":  "排查小程序/小游戏运行问题：console/network 日志、模拟器截图、运行时状态、wx API 诊断、清缓存。 用户提到报错日志、接口失败、截图取证、模拟器卡住时使用。 Use for diagnosing mini-program or mini-game runtime failures through console or network logs, screenshots, runtime state, wx API checks, or cache cleanup.",
                                 "Path":  "skills/wechatide-skill/skills/debugger/SKILL.md",
-                                "Bytes":  6410
+                                "Bytes":  2941
                             },
                             {
                                 "Name":  "initializer",
-                                "Description":  "初始化微信开发者工具开发环境与基础信息。用于项目窗口打开或接管、登录信息获取、AppID 信息获取以及运行时上下文读取。Use for initializing WeChat DevTools, opening or taking over project windows, checking login and AppID details, and reading runtime context.",
+                                "Description":  "初始化微信开发者工具环境：打开/关闭项目窗口、扫码登录、获取 AppID、读取运行时上下文。 用户说打开项目、接管项目、登录、有哪些 AppID、退出开发者工具时使用。不负责自动化、预览或云操作。 Use for opening or closing WeChat DevTools project windows, QR-code login, AppID discovery, and runtime-context initialization.",
                                 "Path":  "skills/wechatide-skill/skills/initializer/SKILL.md",
-                                "Bytes":  8000
+                                "Bytes":  2761
                             },
                             {
                                 "Name":  "previewer",
-                                "Description":  "负责预览和发布：推送手机预览、生成预览码、真机预览、上传代码包。Use for WeChat mini-program preview and release workflows, including phone preview, QR codes, real-device preview, and code-package upload.",
+                                "Description":  "小程序/小游戏预览与发布：自动推送手机预览、生成预览二维码、上传体验版。 用户说预览、发到手机、扫码预览、上传代码、发布体验版时使用。 Use for phone preview, preview QR codes, automatic preview delivery, code upload, and trial-version publishing.",
                                 "Path":  "skills/wechatide-skill/skills/previewer/SKILL.md",
-                                "Bytes":  3331
+                                "Bytes":  2232
                             },
                             {
                                 "Name":  "project-config",
-                                "Description":  "通过读写微信小程序项目根目录的 project.config.json / project.private.config.json 查看与修改项目配置（本地设置、编译开关、目录与打包选项等）。 不调用 wechatide 工具。在用户要改合法域名校验、热重载、ES6/增强编译、上传压缩、 miniprogramRoot、appid、基础库版本，或提到 project.config / 项目设置时使用。 Use for directly reading or editing WeChat mini-program project configuration, including domain checks, hot reload, compilation, upload compression, roots, AppID, and base-library settings, without invoking WeChat DevTools.",
+                                "Description":  "通过读写项目根目录 project.config.json / project.private.config.json 管理 小程序/小游戏项目配置（合法域名校验、热重载、ES6/增强编译、上传压缩、 miniprogramRoot、appid、基础库、compileType 等）。不调用 wechatide。 用户提到 project.config、项目设置、关域名校验时使用。 Use for directly reading or editing WeChat mini-program or mini-game project configuration, including domain checks, hot reload, compilation, upload compression, roots, AppID, base-library versions, and compile type.",
                                 "Path":  "skills/wechatide-skill/skills/project-config/SKILL.md",
-                                "Bytes":  9244
+                                "Bytes":  2846
                             },
                             {
                                 "Name":  "project-manager",
-                                "Description":  "管理微信开发者工具已导入项目列表：查询、导入、从列表删除。不负责打开项目窗口。Use for listing, importing, or removing projects from WeChat DevTools without opening project windows or deleting local files.",
+                                "Description":  "管理微信开发者工具已导入项目列表：查询、导入、从列表删除。不打开项目窗口。 用户说项目列表、导入项目、从列表移除时使用。 Use for listing, importing, or removing projects from the WeChat DevTools project list without opening a project window.",
                                 "Path":  "skills/wechatide-skill/skills/project-manager/SKILL.md",
-                                "Bytes":  2988
+                                "Bytes":  2154
                             },
                             {
                                 "Name":  "writing-anti-ai",
@@ -576,19 +576,19 @@
                          {
                              "Name":  "control-in-app-browser",
                              "Description":  "Control the in-app Browser for opening, navigating, inspecting visible or interactive page state, clicking, typing, screenshots, and local web testing. It can have existing signed-in sessions. For semantic operations on linked resources, prefer a purpose-built connector, API, or CLI when available.",
-                             "Path":  "plugins/cache/openai-bundled/browser/26.715.21425/skills/control-in-app-browser/SKILL.md",
+                             "Path":  "plugins/cache/openai-bundled/browser/26.721.41059/skills/control-in-app-browser/SKILL.md",
                              "Bytes":  11061
                          },
                          {
                              "Name":  "control-chrome",
                              "Description":  "Control the user\u0027s Chrome browser for tasks that depend on existing Chrome state: tabs, logged-in sessions, or extensions. Prefer purpose-built connectors, APIs, or CLIs when available.",
-                             "Path":  "plugins/cache/openai-bundled/chrome/26.715.21425/skills/control-chrome/SKILL.md",
+                             "Path":  "plugins/cache/openai-bundled/chrome/26.721.41059/skills/control-chrome/SKILL.md",
                              "Bytes":  10939
                          },
                          {
                              "Name":  "computer-use",
                              "Description":  "Control Windows apps from ChatGPT",
-                             "Path":  "plugins/cache/openai-bundled/computer-use/26.715.21425/skills/computer-use/SKILL.md",
+                             "Path":  "plugins/cache/openai-bundled/computer-use/26.721.41059/skills/computer-use/SKILL.md",
                              "Bytes":  1619
                          },
                          {
@@ -618,20 +618,20 @@
                          {
                              "Name":  "sites-building",
                              "Description":  "Use Sites to build websites, including landing pages, portfolios, dashboards, portals, trackers, hubs, and internal tools. Always use Sites when the project contains `.openai/hosting.json`.",
-                             "Path":  "plugins/cache/openai-bundled/sites/0.1.30/skills/sites-building/SKILL.md",
-                             "Bytes":  15144
+                             "Path":  "plugins/cache/openai-bundled/sites/0.1.31/skills/sites-building/SKILL.md",
+                             "Bytes":  9322
                          },
                          {
                              "Name":  "sites-hosting",
                              "Description":  "Host websites with Sites. Always use after `sites-building`, and use for website publishing, deployment, hosting management, or projects containing `.openai/hosting.json`.",
-                             "Path":  "plugins/cache/openai-bundled/sites/0.1.30/skills/sites-hosting/SKILL.md",
+                             "Path":  "plugins/cache/openai-bundled/sites/0.1.31/skills/sites-hosting/SKILL.md",
                              "Bytes":  4567
                          },
                          {
                              "Name":  "visualize",
-                             "Description":  "Create visualizations and interactive tools in conversation. Use when asked to show how something works, make simulators or labs, maps, plots, charts or graphs, comparisons, scenarios, adjustable inputs, and exploration.",
-                             "Path":  "plugins/cache/openai-bundled/visualize/1.0.12/skills/visualize/SKILL.md",
-                             "Bytes":  19871
+                             "Description":  "Create visualizations and interactive tools directly in conversation. Use when asked to show how something works, make simulators or labs, maps, plots, charts or graphs, comparisons, scenarios, adjustable inputs, and exploration beyond regular text.",
+                             "Path":  "plugins/cache/openai-bundled/visualize/1.0.15/skills/visualize/SKILL.md",
+                             "Bytes":  20643
                          },
                          {
                              "Name":  "frontend-app-builder",
@@ -936,139 +936,145 @@
                          {
                              "Name":  "attack-path-analysis",
                              "Description":  "Use when Codex is already in the attack-path-analysis phase of a security scan or the user explicitly asks to trace a security finding from source to sink and calibrate severity. Do not use as the primary trigger for full PR, commit, branch, patch, or repository scans.",
-                             "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.11/skills/attack-path-analysis/SKILL.md",
-                             "Bytes":  7074
+                             "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.13/skills/attack-path-analysis/SKILL.md",
+                             "Bytes":  6853
                          },
                          {
                              "Name":  "deep-security-scan",
-                             "Description":  "Use when the user asks for a deep, exhaustive, multi-pass, or variance-reducing repository-wide or scoped-path Codex Security scan. Run repeated independent discovery passes over one resolved scope with worker-specific threat models, semantically merge candidates, synthesize one canonical validation threat model, then run validation, attack-path analysis, canonical JSON completion, and generated reporting once. Do not use for PRs, commits, branch diffs, or working-tree diffs.",
-                             "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.11/skills/deep-security-scan/SKILL.md",
-                             "Bytes":  55003
+                             "Description":  "Use when the user asks for a deep, exhaustive, multi-pass, or variance-reducing repository-wide or scoped-path Codex Security scan. Run repeated independent discovery with the Codex Security deep-scan tool, then synthesize one canonical validation threat model and run validation, attack-path analysis, canonical JSON completion, and generated reporting once. Do not use for PRs, commits, branch diffs, or working-tree diffs.",
+                             "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.13/skills/deep-security-scan/SKILL.md",
+                             "Bytes":  18881
                          },
                          {
                              "Name":  "finding-discovery",
                              "Description":  "Use when Codex is already in the finding-discovery phase of a security scan or the user explicitly asks to discover candidate security findings in a repository or code change. Do not use as the primary trigger for full PR, commit, branch, patch, or repository scans.",
-                             "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.11/skills/finding-discovery/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.13/skills/finding-discovery/SKILL.md",
                              "Bytes":  24983
                          },
                          {
                              "Name":  "fix-finding",
                              "Description":  "Use when the user explicitly asks to fix and verify a validated or plausible security finding. Do not use as the primary trigger for full PR, commit, branch, patch, or repository scans.",
-                             "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.11/skills/fix-finding/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.13/skills/fix-finding/SKILL.md",
                              "Bytes":  9967
                          },
                          {
                              "Name":  "propose-security-hardening",
                              "Description":  "Develop evidence-backed structural and architectural security hardening proposals from vulnerability disclosures, supplied findings, incident or assessment documents, source code, or a completed Codex Security scan. Use when a user asks for systemic improvements, alternatives beyond per-finding patches, before-and-after security architecture views, engineering tradeoff analysis, or an implementation-ready plan for a selected hardening option. Also use automatically after a Codex Security scan with reportable findings when the top-level scan workflow requests final-report hardening guidance.",
-                             "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.11/skills/propose-security-hardening/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.13/skills/propose-security-hardening/SKILL.md",
                              "Bytes":  22666
                          },
                          {
                              "Name":  "security-diff-scan",
                              "Description":  "Use when the user asks for a security review of a pull request, commit, branch diff, working-tree patch, or other Git-backed change set.",
-                             "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.11/skills/security-diff-scan/SKILL.md",
-                             "Bytes":  18893
+                             "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.13/skills/security-diff-scan/SKILL.md",
+                             "Bytes":  21276
                          },
                          {
                              "Name":  "security-scan",
                              "Description":  "Use for a standard, single-pass security audit of an entire repository or a scoped path, package folder, or submodule with no diff to review.  This is the default repository scan.  Do not use for PR/commit/branch/working-tree diffs, or for deep, multi-pass, or variance-reducing scans.",
-                             "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.11/skills/security-scan/SKILL.md",
-                             "Bytes":  24134
+                             "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.13/skills/security-scan/SKILL.md",
+                             "Bytes":  28487
                          },
                          {
                              "Name":  "threat-model",
                              "Description":  "Use when Codex is already in the threat-modeling phase of a security scan, the user explicitly invokes $threat-model, or the user explicitly asks to create, update, or persist a repository threat model. Do not use as the primary trigger for full PR, commit, branch, patch, or repository scans.",
-                             "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.11/skills/threat-model/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.13/skills/threat-model/SKILL.md",
                              "Bytes":  4533
                          },
                          {
                              "Name":  "track-findings",
                              "Description":  "Track validated Codex Security findings in Linear, Jira, GitHub issues, or draft GitHub security advisories. Use it for one finding or an explicitly selected batch of up to 25 findings tracked as Linear, Jira, or GitHub issues. Includes duplicate checks, exact previews, approval-gated writes, and readback. Do not use it for scans or fixes.",
-                             "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.11/skills/track-findings/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.13/skills/track-findings/SKILL.md",
                              "Bytes":  20302
                          },
                          {
                              "Name":  "triage-finding",
                              "Description":  "Use when the user supplies or imports existing security findings, vulnerability reports, or security/vulnerability Jira/Linear tickets from scanners, advisories, GitHub, Atlassian Rovo, Linear, or similar backlog sources and wants static repo-impact triage. Do not use for discovery, duplicate-bug triage, validation, or fixes.",
-                             "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.11/skills/triage-finding/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.13/skills/triage-finding/SKILL.md",
                              "Bytes":  27972
                          },
                          {
                              "Name":  "validation",
                              "Description":  "Use when Codex is already in the validation phase of a security scan or the user explicitly asks to determine whether one or more candidate security findings are valid. Do not use as the primary trigger for full PR, commit, branch, patch, or repository scans.",
-                             "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.11/skills/validation/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.13/skills/validation/SKILL.md",
                              "Bytes":  10799
                          },
                          {
                              "Name":  "vulnerability-writeup",
                              "Description":  "Write up vulnerabilities from disclosure documents, rough notes, supplied findings, PoCs, source code, or Codex Security scan output into polished, self-contained, source-backed reports. Use for one vulnerability or a disclosure campaign; a Codex Security scan is optional.",
-                             "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.11/skills/vulnerability-writeup/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.13/skills/vulnerability-writeup/SKILL.md",
                              "Bytes":  20442
                          },
                          {
                              "Name":  "figma-code-connect",
                              "Description":  "Creates and maintains Figma Code Connect template files that map Figma components to code snippets. Use when the user mentions Code Connect, Figma component mapping, design-to-code translation, or asks to create/update .figma.ts or .figma.js files.",
-                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-code-connect/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.16/skills/figma-code-connect/SKILL.md",
                              "Bytes":  25657
                          },
                          {
                              "Name":  "figma-create-new-file",
                              "Description":  "**MANDATORY prerequisite** — you MUST invoke this skill BEFORE every `create_new_file` tool call. NEVER call `create_new_file` directly without loading this skill first. Trigger whenever the user wants a new blank Figma file — a new design, FigJam, or Slides file — or when you need a fresh file before calling `use_figma`. Usage — /figma-create-new-file [editorType] [fileName] (e.g. /figma-create-new-file figjam My Whiteboard, /figma-create-new-file slides Q3 Review)",
-                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-create-new-file/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.16/skills/figma-create-new-file/SKILL.md",
                              "Bytes":  3946
+                         },
+                         {
+                             "Name":  "figma-design-to-code",
+                             "Description":  "**MANDATORY prerequisite** — you MUST invoke this skill BEFORE calling the `get_design_context` Figma MCP tool. You MUST trigger this skill whenever the user wants to implement, build, port, or code up a Figma design as code. Example prompts (not exhaustive) are \u0027implement this Figma design\u0027, \u0027build this screen from Figma\u0027, \u0027turn this Figma into code\u0027, \u0027design to code\u0027. This skill provides critical instructions and steps to the agent on how to correctly implement Figma designs in code and must NOT be skipped.",
+                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.16/skills/figma-design-to-code/SKILL.md",
+                             "Bytes":  5105
                          },
                          {
                              "Name":  "figma-generate-design",
                              "Description":  "Use this skill alongside figma-use when the task involves translating an application page, view, or multi-section layout into Figma. Triggers: \u0027write to Figma\u0027, \u0027create in Figma from code\u0027, \u0027push page to Figma\u0027, \u0027take this app/page and build it in Figma\u0027, \u0027create a screen\u0027, \u0027build a landing page in Figma\u0027, \u0027update the Figma screen to match code\u0027, \u0027convert this modal/dialog/drawer/panel to Figma\u0027. This is the preferred workflow skill whenever the user wants to build or update a full page, modal, dialog, drawer, sidebar, panel, or any composed multi-section view in Figma from code or a description. Discovers design system components, variables, and styles from Code Connect files, existing screens, and library search, then imports them and assembles views incrementally section-by-section using design system tokens instead of hardcoded values.",
-                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-generate-design/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.16/skills/figma-generate-design/SKILL.md",
                              "Bytes":  33761
                          },
                          {
                              "Name":  "figma-generate-diagram",
                              "Description":  "MANDATORY prerequisite — load this skill BEFORE every `generate_diagram` tool call. NEVER call `generate_diagram` directly without loading this skill first. Trigger whenever the user asks to create, generate, draw, render, sketch, or build a diagram — flowchart, architecture diagram, sequence diagram, ERD or entity-relationship diagram, state diagram or state machine, gantt chart, or timeline. Also trigger when the user mentions Mermaid syntax or wants a system architecture, decision tree, dependency graph, API call flow, auth handshake, schema, or pipeline visualized in FigJam. Routes to type-specific guidance, sets universal Mermaid constraints, and tells you when to use a different diagram type or skip the tool entirely (mindmaps, pie charts, class diagrams, etc.).",
-                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-generate-diagram/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.16/skills/figma-generate-diagram/SKILL.md",
                              "Bytes":  10272
                          },
                          {
                              "Name":  "figma-generate-library",
                              "Description":  "Build or update a professional-grade design system in Figma from a codebase. Use when the user wants to create variables/tokens, build component libraries, create individual components with proper variant sets and variable bindings, set up theming (light/dark modes), document foundations, or reconcile gaps between code and Figma. Also use when the user asks to create or generate any component in Figma — even a single one — since components require proper variable foundations, variant states, and design token bindings to be production-quality. This skill teaches WHAT to build and in WHAT ORDER — it complements the `figma-use` skill which teaches HOW to call the Plugin API. Both skills should be loaded together.",
-                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-generate-library/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.16/skills/figma-generate-library/SKILL.md",
                              "Bytes":  22877
                          },
                          {
                              "Name":  "figma-implement-motion",
                              "Description":  "Translates Figma motion and animations into production-ready application code. Use when implementing animation/motion from a Figma design — user mentions \"implement this motion\", \"add animation from Figma\", \"animate this component\", provides a Figma URL whose node is animated, or when `get_design_context` returns motion data or instructs you to call `get_motion_context`.",
-                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-implement-motion/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.16/skills/figma-implement-motion/SKILL.md",
                              "Bytes":  22558
                          },
                          {
                              "Name":  "figma-swiftui",
                              "Description":  "SwiftUI ↔ Figma translation. Use whenever the user mentions Swift, SwiftUI, iOS, iPhone, or iPad — in EITHER direction — translating a Figma design into SwiftUI (design → code), or pushing SwiftUI views / screens / tokens back into a Figma file (code → design). Triggers on phrases like \u0027implement this Figma design in SwiftUI\u0027, \u0027build this screen in Swift\u0027, \u0027push this SwiftUI view to Figma\u0027, \u0027mirror my Swift code in a Figma file\u0027, or whenever a Figma URL appears alongside `.swift` files / an `.xcodeproj`. Routes to a direction-specific reference doc; loads alongside `figma-use` for the code → design path.",
-                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-swiftui/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.16/skills/figma-swiftui/SKILL.md",
                              "Bytes":  4049
                          },
                          {
                              "Name":  "figma-use",
                              "Description":  "**MANDATORY prerequisite** — you MUST invoke this skill BEFORE every `use_figma` tool call. NEVER call `use_figma` directly without loading this skill first. Skipping it causes common, hard-to-debug failures. Trigger whenever the user wants to perform a write action or a unique read action that requires JavaScript execution in the Figma file context — e.g. create/edit/delete nodes, set up variables or tokens, build components and variants, modify auto-layout or fills, bind variables to properties, or inspect file structure programmatically.",
-                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-use/SKILL.md",
-                             "Bytes":  34434
+                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.16/skills/figma-use/SKILL.md",
+                             "Bytes":  34378
                          },
                          {
                              "Name":  "figma-use-figjam",
                              "Description":  "This skill helps agents use Figma\u0027s use_figma MCP tool in the FigJam context. Can be used alongside figma-use which has foundational context for using the use_figma tool.",
-                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-use-figjam/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.16/skills/figma-use-figjam/SKILL.md",
                              "Bytes":  7089
                          },
                          {
                              "Name":  "figma-use-motion",
                              "Description":  "Motion / animation context for the `use_figma` MCP tool — animating Figma nodes via manual keyframes, animation styles, easing, and timeline duration. Load alongside figma-use whenever a task involves adding, editing, or inspecting animation on a node.",
-                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-use-motion/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.16/skills/figma-use-motion/SKILL.md",
                              "Bytes":  6921
                          },
                          {
                              "Name":  "figma-use-slides",
                              "Description":  "This skill helps agents use Figma\u0027s use_figma MCP tool in the Slides context. Can be used alongside figma-use which has foundational context for using the use_figma tool.",
-                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-use-slides/SKILL.md",
+                             "Path":  "plugins/cache/openai-curated-remote/figma/2.0.16/skills/figma-use-slides/SKILL.md",
                              "Bytes":  22155
                          },
                          {
@@ -1218,38 +1224,38 @@
                          {
                              "Name":  "documents",
                              "Description":  "Create, edit, redline, and comment on `.docx`, Word, and Google Docs-targeted document artifacts inside the container, with a strict render-and-verify workflow. Use `render_docx.py` to generate page PNGs (and optional PDF) for visual QA, then iterate until layout is flawless before delivering the final document.",
-                             "Path":  "plugins/cache/openai-primary-runtime/documents/26.715.12143/skills/documents/SKILL.md",
-                             "Bytes":  39954
+                             "Path":  "plugins/cache/openai-primary-runtime/documents/26.723.12215/skills/documents/SKILL.md",
+                             "Bytes":  39780
                          },
                          {
                              "Name":  "pdf",
-                             "Description":  "Read, create, inspect, render, and verify PDF files where visual layout matters. Use Poppler rendering plus Python tools such as reportlab, pdfplumber, and pypdf for generation and extraction.",
-                             "Path":  "plugins/cache/openai-primary-runtime/pdf/26.715.12143/skills/pdf/SKILL.md",
-                             "Bytes":  2842
+                             "Description":  "Read, create, inspect, render, and verify PDF files where visual layout matters, including fillable AcroForms. Use Poppler rendering plus Python tools such as reportlab, pdfplumber, and pypdf for generation and extraction.",
+                             "Path":  "plugins/cache/openai-primary-runtime/pdf/26.723.12215/skills/pdf/SKILL.md",
+                             "Bytes":  5817
                          },
                          {
                              "Name":  "Presentations",
-                             "Description":  "Create or edit PowerPoint or Google Slides decks",
-                             "Path":  "plugins/cache/openai-primary-runtime/presentations/26.715.12143/skills/presentations/SKILL.md",
-                             "Bytes":  18014
+                             "Description":  "Read, create or edit PowerPoint or Google Slides decks. Use for presentation, slide deck, PowerPoint, PPT, PPTX, or Google Slides requests.",
+                             "Path":  "plugins/cache/openai-primary-runtime/presentations/26.723.12215/skills/presentations/SKILL.md",
+                             "Bytes":  13093
                          },
                          {
                              "Name":  "excel-live-control",
                              "Description":  "Control an open or active Microsoft Excel workbook through the ChatGPT add-in or connected session. Use when the user tags the Microsoft Excel app in Codex or follows up on an established live Excel task. Do not use for standalone spreadsheet files or Google Sheets.",
-                             "Path":  "plugins/cache/openai-primary-runtime/spreadsheets/26.715.12143/skills/excel-live-control/SKILL.md",
+                             "Path":  "plugins/cache/openai-primary-runtime/spreadsheets/26.723.12215/skills/excel-live-control/SKILL.md",
                              "Bytes":  23756
                          },
                          {
                              "Name":  "Spreadsheets",
                              "Description":  "Create, edit, analyze, and verify standalone spreadsheet files or Google Sheets-ready workbooks, including .xlsx, .xls, .csv, and .tsv. Do not use for live controlling Microsoft Excel app or a live Excel session.",
-                             "Path":  "plugins/cache/openai-primary-runtime/spreadsheets/26.715.12143/skills/spreadsheets/SKILL.md",
-                             "Bytes":  15650
+                             "Path":  "plugins/cache/openai-primary-runtime/spreadsheets/26.723.12215/skills/spreadsheets/SKILL.md",
+                             "Bytes":  15284
                          },
                          {
                              "Name":  "template-creator",
-                             "Description":  "Create or update a reusable personal Codex artifact-template skill. Use when the user invokes $template-creator or asks in natural language to create a template using, from, or based on an attached Word document, PowerPoint presentation, or Excel workbook, or explicitly asks to edit or update a passed artifact-template skill. Do not use for one-off artifact creation from an existing template.",
-                             "Path":  "plugins/cache/openai-primary-runtime/template-creator/26.715.12143/skills/template-creator/SKILL.md",
-                             "Bytes":  7039
+                             "Description":  "Create or update a reusable personal Codex artifact-template skill. Use when the user invokes $template-creator or asks in natural language to create a reusable template from a reference document, presentation, spreadsheet, ImageGen or Product Design image, email, or Slack message, or explicitly asks to edit or update a passed artifact-template skill. Do not use for one-off creation from an existing template.",
+                             "Path":  "plugins/cache/openai-primary-runtime/template-creator/26.723.12215/skills/template-creator/SKILL.md",
+                             "Bytes":  10283
                          }
                      ],
     "officialPluginSkills":  [
@@ -1292,19 +1298,19 @@
                                  {
                                      "Name":  "control-in-app-browser",
                                      "Description":  "Control the in-app Browser for opening, navigating, inspecting visible or interactive page state, clicking, typing, screenshots, and local web testing. It can have existing signed-in sessions. For semantic operations on linked resources, prefer a purpose-built connector, API, or CLI when available.",
-                                     "Path":  "plugins/cache/openai-bundled/browser/26.715.21425/skills/control-in-app-browser/SKILL.md",
+                                     "Path":  "plugins/cache/openai-bundled/browser/26.721.41059/skills/control-in-app-browser/SKILL.md",
                                      "Bytes":  11061
                                  },
                                  {
                                      "Name":  "control-chrome",
                                      "Description":  "Control the user\u0027s Chrome browser for tasks that depend on existing Chrome state: tabs, logged-in sessions, or extensions. Prefer purpose-built connectors, APIs, or CLIs when available.",
-                                     "Path":  "plugins/cache/openai-bundled/chrome/26.715.21425/skills/control-chrome/SKILL.md",
+                                     "Path":  "plugins/cache/openai-bundled/chrome/26.721.41059/skills/control-chrome/SKILL.md",
                                      "Bytes":  10939
                                  },
                                  {
                                      "Name":  "computer-use",
                                      "Description":  "Control Windows apps from ChatGPT",
-                                     "Path":  "plugins/cache/openai-bundled/computer-use/26.715.21425/skills/computer-use/SKILL.md",
+                                     "Path":  "plugins/cache/openai-bundled/computer-use/26.721.41059/skills/computer-use/SKILL.md",
                                      "Bytes":  1619
                                  },
                                  {
@@ -1334,20 +1340,20 @@
                                  {
                                      "Name":  "sites-building",
                                      "Description":  "Use Sites to build websites, including landing pages, portfolios, dashboards, portals, trackers, hubs, and internal tools. Always use Sites when the project contains `.openai/hosting.json`.",
-                                     "Path":  "plugins/cache/openai-bundled/sites/0.1.30/skills/sites-building/SKILL.md",
-                                     "Bytes":  15144
+                                     "Path":  "plugins/cache/openai-bundled/sites/0.1.31/skills/sites-building/SKILL.md",
+                                     "Bytes":  9322
                                  },
                                  {
                                      "Name":  "sites-hosting",
                                      "Description":  "Host websites with Sites. Always use after `sites-building`, and use for website publishing, deployment, hosting management, or projects containing `.openai/hosting.json`.",
-                                     "Path":  "plugins/cache/openai-bundled/sites/0.1.30/skills/sites-hosting/SKILL.md",
+                                     "Path":  "plugins/cache/openai-bundled/sites/0.1.31/skills/sites-hosting/SKILL.md",
                                      "Bytes":  4567
                                  },
                                  {
                                      "Name":  "visualize",
-                                     "Description":  "Create visualizations and interactive tools in conversation. Use when asked to show how something works, make simulators or labs, maps, plots, charts or graphs, comparisons, scenarios, adjustable inputs, and exploration.",
-                                     "Path":  "plugins/cache/openai-bundled/visualize/1.0.12/skills/visualize/SKILL.md",
-                                     "Bytes":  19871
+                                     "Description":  "Create visualizations and interactive tools directly in conversation. Use when asked to show how something works, make simulators or labs, maps, plots, charts or graphs, comparisons, scenarios, adjustable inputs, and exploration beyond regular text.",
+                                     "Path":  "plugins/cache/openai-bundled/visualize/1.0.15/skills/visualize/SKILL.md",
+                                     "Bytes":  20643
                                  },
                                  {
                                      "Name":  "frontend-app-builder",
@@ -1652,139 +1658,145 @@
                                  {
                                      "Name":  "attack-path-analysis",
                                      "Description":  "Use when Codex is already in the attack-path-analysis phase of a security scan or the user explicitly asks to trace a security finding from source to sink and calibrate severity. Do not use as the primary trigger for full PR, commit, branch, patch, or repository scans.",
-                                     "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.11/skills/attack-path-analysis/SKILL.md",
-                                     "Bytes":  7074
+                                     "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.13/skills/attack-path-analysis/SKILL.md",
+                                     "Bytes":  6853
                                  },
                                  {
                                      "Name":  "deep-security-scan",
-                                     "Description":  "Use when the user asks for a deep, exhaustive, multi-pass, or variance-reducing repository-wide or scoped-path Codex Security scan. Run repeated independent discovery passes over one resolved scope with worker-specific threat models, semantically merge candidates, synthesize one canonical validation threat model, then run validation, attack-path analysis, canonical JSON completion, and generated reporting once. Do not use for PRs, commits, branch diffs, or working-tree diffs.",
-                                     "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.11/skills/deep-security-scan/SKILL.md",
-                                     "Bytes":  55003
+                                     "Description":  "Use when the user asks for a deep, exhaustive, multi-pass, or variance-reducing repository-wide or scoped-path Codex Security scan. Run repeated independent discovery with the Codex Security deep-scan tool, then synthesize one canonical validation threat model and run validation, attack-path analysis, canonical JSON completion, and generated reporting once. Do not use for PRs, commits, branch diffs, or working-tree diffs.",
+                                     "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.13/skills/deep-security-scan/SKILL.md",
+                                     "Bytes":  18881
                                  },
                                  {
                                      "Name":  "finding-discovery",
                                      "Description":  "Use when Codex is already in the finding-discovery phase of a security scan or the user explicitly asks to discover candidate security findings in a repository or code change. Do not use as the primary trigger for full PR, commit, branch, patch, or repository scans.",
-                                     "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.11/skills/finding-discovery/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.13/skills/finding-discovery/SKILL.md",
                                      "Bytes":  24983
                                  },
                                  {
                                      "Name":  "fix-finding",
                                      "Description":  "Use when the user explicitly asks to fix and verify a validated or plausible security finding. Do not use as the primary trigger for full PR, commit, branch, patch, or repository scans.",
-                                     "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.11/skills/fix-finding/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.13/skills/fix-finding/SKILL.md",
                                      "Bytes":  9967
                                  },
                                  {
                                      "Name":  "propose-security-hardening",
                                      "Description":  "Develop evidence-backed structural and architectural security hardening proposals from vulnerability disclosures, supplied findings, incident or assessment documents, source code, or a completed Codex Security scan. Use when a user asks for systemic improvements, alternatives beyond per-finding patches, before-and-after security architecture views, engineering tradeoff analysis, or an implementation-ready plan for a selected hardening option. Also use automatically after a Codex Security scan with reportable findings when the top-level scan workflow requests final-report hardening guidance.",
-                                     "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.11/skills/propose-security-hardening/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.13/skills/propose-security-hardening/SKILL.md",
                                      "Bytes":  22666
                                  },
                                  {
                                      "Name":  "security-diff-scan",
                                      "Description":  "Use when the user asks for a security review of a pull request, commit, branch diff, working-tree patch, or other Git-backed change set.",
-                                     "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.11/skills/security-diff-scan/SKILL.md",
-                                     "Bytes":  18893
+                                     "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.13/skills/security-diff-scan/SKILL.md",
+                                     "Bytes":  21276
                                  },
                                  {
                                      "Name":  "security-scan",
                                      "Description":  "Use for a standard, single-pass security audit of an entire repository or a scoped path, package folder, or submodule with no diff to review.  This is the default repository scan.  Do not use for PR/commit/branch/working-tree diffs, or for deep, multi-pass, or variance-reducing scans.",
-                                     "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.11/skills/security-scan/SKILL.md",
-                                     "Bytes":  24134
+                                     "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.13/skills/security-scan/SKILL.md",
+                                     "Bytes":  28487
                                  },
                                  {
                                      "Name":  "threat-model",
                                      "Description":  "Use when Codex is already in the threat-modeling phase of a security scan, the user explicitly invokes $threat-model, or the user explicitly asks to create, update, or persist a repository threat model. Do not use as the primary trigger for full PR, commit, branch, patch, or repository scans.",
-                                     "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.11/skills/threat-model/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.13/skills/threat-model/SKILL.md",
                                      "Bytes":  4533
                                  },
                                  {
                                      "Name":  "track-findings",
                                      "Description":  "Track validated Codex Security findings in Linear, Jira, GitHub issues, or draft GitHub security advisories. Use it for one finding or an explicitly selected batch of up to 25 findings tracked as Linear, Jira, or GitHub issues. Includes duplicate checks, exact previews, approval-gated writes, and readback. Do not use it for scans or fixes.",
-                                     "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.11/skills/track-findings/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.13/skills/track-findings/SKILL.md",
                                      "Bytes":  20302
                                  },
                                  {
                                      "Name":  "triage-finding",
                                      "Description":  "Use when the user supplies or imports existing security findings, vulnerability reports, or security/vulnerability Jira/Linear tickets from scanners, advisories, GitHub, Atlassian Rovo, Linear, or similar backlog sources and wants static repo-impact triage. Do not use for discovery, duplicate-bug triage, validation, or fixes.",
-                                     "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.11/skills/triage-finding/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.13/skills/triage-finding/SKILL.md",
                                      "Bytes":  27972
                                  },
                                  {
                                      "Name":  "validation",
                                      "Description":  "Use when Codex is already in the validation phase of a security scan or the user explicitly asks to determine whether one or more candidate security findings are valid. Do not use as the primary trigger for full PR, commit, branch, patch, or repository scans.",
-                                     "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.11/skills/validation/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.13/skills/validation/SKILL.md",
                                      "Bytes":  10799
                                  },
                                  {
                                      "Name":  "vulnerability-writeup",
                                      "Description":  "Write up vulnerabilities from disclosure documents, rough notes, supplied findings, PoCs, source code, or Codex Security scan output into polished, self-contained, source-backed reports. Use for one vulnerability or a disclosure campaign; a Codex Security scan is optional.",
-                                     "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.11/skills/vulnerability-writeup/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/codex-security/0.1.13/skills/vulnerability-writeup/SKILL.md",
                                      "Bytes":  20442
                                  },
                                  {
                                      "Name":  "figma-code-connect",
                                      "Description":  "Creates and maintains Figma Code Connect template files that map Figma components to code snippets. Use when the user mentions Code Connect, Figma component mapping, design-to-code translation, or asks to create/update .figma.ts or .figma.js files.",
-                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-code-connect/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.16/skills/figma-code-connect/SKILL.md",
                                      "Bytes":  25657
                                  },
                                  {
                                      "Name":  "figma-create-new-file",
                                      "Description":  "**MANDATORY prerequisite** — you MUST invoke this skill BEFORE every `create_new_file` tool call. NEVER call `create_new_file` directly without loading this skill first. Trigger whenever the user wants a new blank Figma file — a new design, FigJam, or Slides file — or when you need a fresh file before calling `use_figma`. Usage — /figma-create-new-file [editorType] [fileName] (e.g. /figma-create-new-file figjam My Whiteboard, /figma-create-new-file slides Q3 Review)",
-                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-create-new-file/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.16/skills/figma-create-new-file/SKILL.md",
                                      "Bytes":  3946
+                                 },
+                                 {
+                                     "Name":  "figma-design-to-code",
+                                     "Description":  "**MANDATORY prerequisite** — you MUST invoke this skill BEFORE calling the `get_design_context` Figma MCP tool. You MUST trigger this skill whenever the user wants to implement, build, port, or code up a Figma design as code. Example prompts (not exhaustive) are \u0027implement this Figma design\u0027, \u0027build this screen from Figma\u0027, \u0027turn this Figma into code\u0027, \u0027design to code\u0027. This skill provides critical instructions and steps to the agent on how to correctly implement Figma designs in code and must NOT be skipped.",
+                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.16/skills/figma-design-to-code/SKILL.md",
+                                     "Bytes":  5105
                                  },
                                  {
                                      "Name":  "figma-generate-design",
                                      "Description":  "Use this skill alongside figma-use when the task involves translating an application page, view, or multi-section layout into Figma. Triggers: \u0027write to Figma\u0027, \u0027create in Figma from code\u0027, \u0027push page to Figma\u0027, \u0027take this app/page and build it in Figma\u0027, \u0027create a screen\u0027, \u0027build a landing page in Figma\u0027, \u0027update the Figma screen to match code\u0027, \u0027convert this modal/dialog/drawer/panel to Figma\u0027. This is the preferred workflow skill whenever the user wants to build or update a full page, modal, dialog, drawer, sidebar, panel, or any composed multi-section view in Figma from code or a description. Discovers design system components, variables, and styles from Code Connect files, existing screens, and library search, then imports them and assembles views incrementally section-by-section using design system tokens instead of hardcoded values.",
-                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-generate-design/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.16/skills/figma-generate-design/SKILL.md",
                                      "Bytes":  33761
                                  },
                                  {
                                      "Name":  "figma-generate-diagram",
                                      "Description":  "MANDATORY prerequisite — load this skill BEFORE every `generate_diagram` tool call. NEVER call `generate_diagram` directly without loading this skill first. Trigger whenever the user asks to create, generate, draw, render, sketch, or build a diagram — flowchart, architecture diagram, sequence diagram, ERD or entity-relationship diagram, state diagram or state machine, gantt chart, or timeline. Also trigger when the user mentions Mermaid syntax or wants a system architecture, decision tree, dependency graph, API call flow, auth handshake, schema, or pipeline visualized in FigJam. Routes to type-specific guidance, sets universal Mermaid constraints, and tells you when to use a different diagram type or skip the tool entirely (mindmaps, pie charts, class diagrams, etc.).",
-                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-generate-diagram/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.16/skills/figma-generate-diagram/SKILL.md",
                                      "Bytes":  10272
                                  },
                                  {
                                      "Name":  "figma-generate-library",
                                      "Description":  "Build or update a professional-grade design system in Figma from a codebase. Use when the user wants to create variables/tokens, build component libraries, create individual components with proper variant sets and variable bindings, set up theming (light/dark modes), document foundations, or reconcile gaps between code and Figma. Also use when the user asks to create or generate any component in Figma — even a single one — since components require proper variable foundations, variant states, and design token bindings to be production-quality. This skill teaches WHAT to build and in WHAT ORDER — it complements the `figma-use` skill which teaches HOW to call the Plugin API. Both skills should be loaded together.",
-                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-generate-library/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.16/skills/figma-generate-library/SKILL.md",
                                      "Bytes":  22877
                                  },
                                  {
                                      "Name":  "figma-implement-motion",
                                      "Description":  "Translates Figma motion and animations into production-ready application code. Use when implementing animation/motion from a Figma design — user mentions \"implement this motion\", \"add animation from Figma\", \"animate this component\", provides a Figma URL whose node is animated, or when `get_design_context` returns motion data or instructs you to call `get_motion_context`.",
-                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-implement-motion/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.16/skills/figma-implement-motion/SKILL.md",
                                      "Bytes":  22558
                                  },
                                  {
                                      "Name":  "figma-swiftui",
                                      "Description":  "SwiftUI ↔ Figma translation. Use whenever the user mentions Swift, SwiftUI, iOS, iPhone, or iPad — in EITHER direction — translating a Figma design into SwiftUI (design → code), or pushing SwiftUI views / screens / tokens back into a Figma file (code → design). Triggers on phrases like \u0027implement this Figma design in SwiftUI\u0027, \u0027build this screen in Swift\u0027, \u0027push this SwiftUI view to Figma\u0027, \u0027mirror my Swift code in a Figma file\u0027, or whenever a Figma URL appears alongside `.swift` files / an `.xcodeproj`. Routes to a direction-specific reference doc; loads alongside `figma-use` for the code → design path.",
-                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-swiftui/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.16/skills/figma-swiftui/SKILL.md",
                                      "Bytes":  4049
                                  },
                                  {
                                      "Name":  "figma-use",
                                      "Description":  "**MANDATORY prerequisite** — you MUST invoke this skill BEFORE every `use_figma` tool call. NEVER call `use_figma` directly without loading this skill first. Skipping it causes common, hard-to-debug failures. Trigger whenever the user wants to perform a write action or a unique read action that requires JavaScript execution in the Figma file context — e.g. create/edit/delete nodes, set up variables or tokens, build components and variants, modify auto-layout or fills, bind variables to properties, or inspect file structure programmatically.",
-                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-use/SKILL.md",
-                                     "Bytes":  34434
+                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.16/skills/figma-use/SKILL.md",
+                                     "Bytes":  34378
                                  },
                                  {
                                      "Name":  "figma-use-figjam",
                                      "Description":  "This skill helps agents use Figma\u0027s use_figma MCP tool in the FigJam context. Can be used alongside figma-use which has foundational context for using the use_figma tool.",
-                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-use-figjam/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.16/skills/figma-use-figjam/SKILL.md",
                                      "Bytes":  7089
                                  },
                                  {
                                      "Name":  "figma-use-motion",
                                      "Description":  "Motion / animation context for the `use_figma` MCP tool — animating Figma nodes via manual keyframes, animation styles, easing, and timeline duration. Load alongside figma-use whenever a task involves adding, editing, or inspecting animation on a node.",
-                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-use-motion/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.16/skills/figma-use-motion/SKILL.md",
                                      "Bytes":  6921
                                  },
                                  {
                                      "Name":  "figma-use-slides",
                                      "Description":  "This skill helps agents use Figma\u0027s use_figma MCP tool in the Slides context. Can be used alongside figma-use which has foundational context for using the use_figma tool.",
-                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.15/skills/figma-use-slides/SKILL.md",
+                                     "Path":  "plugins/cache/openai-curated-remote/figma/2.0.16/skills/figma-use-slides/SKILL.md",
                                      "Bytes":  22155
                                  },
                                  {
@@ -1934,38 +1946,38 @@
                                  {
                                      "Name":  "documents",
                                      "Description":  "Create, edit, redline, and comment on `.docx`, Word, and Google Docs-targeted document artifacts inside the container, with a strict render-and-verify workflow. Use `render_docx.py` to generate page PNGs (and optional PDF) for visual QA, then iterate until layout is flawless before delivering the final document.",
-                                     "Path":  "plugins/cache/openai-primary-runtime/documents/26.715.12143/skills/documents/SKILL.md",
-                                     "Bytes":  39954
+                                     "Path":  "plugins/cache/openai-primary-runtime/documents/26.723.12215/skills/documents/SKILL.md",
+                                     "Bytes":  39780
                                  },
                                  {
                                      "Name":  "pdf",
-                                     "Description":  "Read, create, inspect, render, and verify PDF files where visual layout matters. Use Poppler rendering plus Python tools such as reportlab, pdfplumber, and pypdf for generation and extraction.",
-                                     "Path":  "plugins/cache/openai-primary-runtime/pdf/26.715.12143/skills/pdf/SKILL.md",
-                                     "Bytes":  2842
+                                     "Description":  "Read, create, inspect, render, and verify PDF files where visual layout matters, including fillable AcroForms. Use Poppler rendering plus Python tools such as reportlab, pdfplumber, and pypdf for generation and extraction.",
+                                     "Path":  "plugins/cache/openai-primary-runtime/pdf/26.723.12215/skills/pdf/SKILL.md",
+                                     "Bytes":  5817
                                  },
                                  {
                                      "Name":  "Presentations",
-                                     "Description":  "Create or edit PowerPoint or Google Slides decks",
-                                     "Path":  "plugins/cache/openai-primary-runtime/presentations/26.715.12143/skills/presentations/SKILL.md",
-                                     "Bytes":  18014
+                                     "Description":  "Read, create or edit PowerPoint or Google Slides decks. Use for presentation, slide deck, PowerPoint, PPT, PPTX, or Google Slides requests.",
+                                     "Path":  "plugins/cache/openai-primary-runtime/presentations/26.723.12215/skills/presentations/SKILL.md",
+                                     "Bytes":  13093
                                  },
                                  {
                                      "Name":  "excel-live-control",
                                      "Description":  "Control an open or active Microsoft Excel workbook through the ChatGPT add-in or connected session. Use when the user tags the Microsoft Excel app in Codex or follows up on an established live Excel task. Do not use for standalone spreadsheet files or Google Sheets.",
-                                     "Path":  "plugins/cache/openai-primary-runtime/spreadsheets/26.715.12143/skills/excel-live-control/SKILL.md",
+                                     "Path":  "plugins/cache/openai-primary-runtime/spreadsheets/26.723.12215/skills/excel-live-control/SKILL.md",
                                      "Bytes":  23756
                                  },
                                  {
                                      "Name":  "Spreadsheets",
                                      "Description":  "Create, edit, analyze, and verify standalone spreadsheet files or Google Sheets-ready workbooks, including .xlsx, .xls, .csv, and .tsv. Do not use for live controlling Microsoft Excel app or a live Excel session.",
-                                     "Path":  "plugins/cache/openai-primary-runtime/spreadsheets/26.715.12143/skills/spreadsheets/SKILL.md",
-                                     "Bytes":  15650
+                                     "Path":  "plugins/cache/openai-primary-runtime/spreadsheets/26.723.12215/skills/spreadsheets/SKILL.md",
+                                     "Bytes":  15284
                                  },
                                  {
                                      "Name":  "template-creator",
-                                     "Description":  "Create or update a reusable personal Codex artifact-template skill. Use when the user invokes $template-creator or asks in natural language to create a template using, from, or based on an attached Word document, PowerPoint presentation, or Excel workbook, or explicitly asks to edit or update a passed artifact-template skill. Do not use for one-off artifact creation from an existing template.",
-                                     "Path":  "plugins/cache/openai-primary-runtime/template-creator/26.715.12143/skills/template-creator/SKILL.md",
-                                     "Bytes":  7039
+                                     "Description":  "Create or update a reusable personal Codex artifact-template skill. Use when the user invokes $template-creator or asks in natural language to create a reusable template from a reference document, presentation, spreadsheet, ImageGen or Product Design image, email, or Slack message, or explicitly asks to edit or update a passed artifact-template skill. Do not use for one-off creation from an existing template.",
+                                     "Path":  "plugins/cache/openai-primary-runtime/template-creator/26.723.12215/skills/template-creator/SKILL.md",
+                                     "Bytes":  10283
                                  }
                              ]
 }

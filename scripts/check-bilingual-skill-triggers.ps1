@@ -4,6 +4,7 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+. (Join-Path $PSScriptRoot "skill-export-policy.ps1")
 $skillsRoot = Join-Path $CodexHome "skills"
 if (-not (Test-Path -LiteralPath $skillsRoot)) {
   throw "Skills directory not found: $skillsRoot"
@@ -43,7 +44,11 @@ $rootResolved = (Resolve-Path -LiteralPath $skillsRoot).Path.TrimEnd("\", "/")
 $missing = @()
 Get-ChildItem -LiteralPath $skillsRoot -Recurse -File -Filter "SKILL.md" -Force | ForEach-Object {
   $relativePath = $_.FullName.Substring($rootResolved.Length).TrimStart("\", "/")
-  if (($relativePath -split "[\\/]")[0] -eq ".system") {
+  $topLevelName = ($relativePath -split "[\\/]")[0]
+  if (
+    $topLevelName -eq ".system" -or
+    (Test-PathUnderTimestampedSkillBackup -RelativePath $relativePath)
+  ) {
     return
   }
 
@@ -56,10 +61,7 @@ Get-ChildItem -LiteralPath $skillsRoot -Recurse -File -Filter "SKILL.md" -Force 
   $name = Get-FrontmatterValue -Lines $lines -Key "name"
   $description = Get-FrontmatterValue -Lines $lines -Key "description"
   $hasChinese = $description -match "[\u3400-\u9fff]"
-  $englishPhrasePattern = (
-    "(?i)(?:\b[A-Za-z][A-Za-z0-9+./-]*\b[\s,;:()/'""-]*){6,}"
-  )
-  $hasEnglish = [regex]::IsMatch($description, $englishPhrasePattern)
+  $hasEnglish = Test-HasEnglishTriggerWording -Text $description
 
   if (-not $hasChinese -or -not $hasEnglish) {
     $missing += [PSCustomObject]@{

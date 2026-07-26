@@ -4,6 +4,7 @@ param(
 
 $ErrorActionPreference = "Stop"
 $repoRoot = Resolve-Path (Join-Path $PSScriptRoot "..")
+. (Join-Path $PSScriptRoot "skill-export-policy.ps1")
 $docsDir = Join-Path $repoRoot "docs"
 New-Item -ItemType Directory -Path $docsDir -Force | Out-Null
 
@@ -113,6 +114,10 @@ $skillsRoot = Join-Path $repoRoot "skills"
 $installed = @()
 if (Test-Path -LiteralPath $skillsRoot) {
   $installed = Get-ChildItem -Recurse -File -Filter "SKILL.md" -LiteralPath $skillsRoot -Force |
+    Where-Object {
+      $relativeSkillPath = Get-RelativePathCompat -BasePath $skillsRoot -FullPath $_.FullName
+      -not (Test-PathUnderTimestampedSkillBackup -RelativePath $relativeSkillPath)
+    } |
     ForEach-Object { Get-SkillRecord -File $_ -BasePath $repoRoot }
 }
 

@@ -3,6 +3,7 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+. (Join-Path $PSScriptRoot "skill-export-policy.ps1")
 if ([string]::IsNullOrWhiteSpace($RepoRoot)) {
   $resolvedRoot = Resolve-Path (Join-Path $PSScriptRoot "..")
 } else {
@@ -13,6 +14,19 @@ $root = $resolvedRoot.Path.TrimEnd("\", "/")
 $issues = New-Object System.Collections.Generic.List[object]
 $forbiddenNames = @("auth.json", "auth1.json", "id_rsa", "id_ed25519")
 $forbiddenExtensions = @(".key", ".pem", ".p12", ".pfx", ".sqlite", ".log")
+
+$skillsRoot = Join-Path $root "skills"
+if (Test-Path -LiteralPath $skillsRoot) {
+  Get-ChildItem -LiteralPath $skillsRoot -Directory -Force | ForEach-Object {
+    if (Test-TimestampedSkillBackupName -Name $_.Name) {
+      $issues.Add([PSCustomObject]@{
+        Path = "skills/$($_.Name)"
+        Line = 0
+        Reason = "timestamped skill backup must not be published"
+      })
+    }
+  }
+}
 
 Get-ChildItem -LiteralPath $root -Recurse -File -Force | ForEach-Object {
   $relativePath = $_.FullName.Substring($root.Length).TrimStart("\", "/").Replace("\", "/")

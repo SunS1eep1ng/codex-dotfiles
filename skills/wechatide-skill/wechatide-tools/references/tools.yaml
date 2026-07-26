@@ -6,7 +6,7 @@
     {
       "id": "check_wechatide_status",
       "name": "读取微信开发者工具状态",
-      "summary": "读取微信开发者工具登录态、openid 和当前运行的 skill 版本号；连接失败时会用当前 clientName 自动 auth 一次并重试。",
+      "summary": "读取微信开发者工具登录态（loginExpired）、当前登录用户（loginUser）和 skill 版本号；始终返回 versionRelation；未传 agent skill 版本时为 skip_check；落后则按 skillPath 同步内置 skill，超前则提示更新开发者工具或同步；连接失败时会用当前 clientName 自动 auth 一次并重试。",
       "group": "ide",
       "source": {
         "type": "wechatide"
@@ -18,7 +18,7 @@
         "version": {
           "type": "string",
           "required": false,
-          "description": "当前调用侧 agent 加载的 wechatide-skill/skill.yaml 文件中的 version 字段值；不传则跳过版本对比提醒。"
+          "description": "当前调用侧 agent 加载的 wechatide-skill/skill.yaml 文件中的 version 字段值。skill 约定会话首次检查必须传；不传则 versionRelation 为 skip_check 并返回 warning，且不得当作就绪。传入时返回 versionRelation（equal | agent_behind | agent_ahead），不一致时附带 warning 与 skillPath。"
         }
       },
       "execution": {
@@ -75,7 +75,7 @@
     {
       "id": "quit",
       "name": "退出工具",
-      "summary": "关闭 DevTools。",
+      "summary": "关闭 WechatIDE。",
       "group": "ide",
       "source": {
         "type": "wechatide"
@@ -109,7 +109,7 @@
     {
       "id": "project_import",
       "name": "导入项目到列表",
-      "summary": "将本地项目目录导入 DevTools 项目列表，不打开项目窗口；路径已在列表中时返回 alreadyImported。与 project_open_window 不同，不做 appid 权限预检，无效目录由底层 importProject 报错。",
+      "summary": "将本地项目目录导入到微信开发者工具项目列表，不打开项目窗口；路径已在列表中时返回 alreadyImported。",
       "group": "project-manager",
       "source": {
         "type": "wechatide"
@@ -213,7 +213,7 @@
       }
     },
     {
-      "id": "buildnpm",
+      "id": "build_npm",
       "name": "构建 npm",
       "summary": "构建 npm。",
       "group": "project-action",
@@ -221,7 +221,6 @@
         "type": "wechatide"
       },
       "scenes": [
-        "initializer",
         "compiler"
       ],
       "inputSchema": {
@@ -236,7 +235,7 @@
       },
       "execution": {
         "transport": "skill_call",
-        "toolName": "buildnpm"
+        "toolName": "build_npm"
       }
     },
     {
@@ -415,8 +414,7 @@
         "type": "wechatide"
       },
       "scenes": [
-        "compiler",
-        "debugger"
+        "compiler"
       ],
       "inputSchema": {
         "project": {
@@ -483,6 +481,44 @@
       "execution": {
         "transport": "skill_call",
         "toolName": "get_simulator_network"
+      }
+    },
+    {
+      "id": "simulator_screenshot",
+      "name": "截取模拟器画面",
+      "summary": "截取已打开项目窗口中的模拟器画面（完整 SimulatorUI，含 StatusBar / Cover / Toast 等）。项目窗口需已打开；可选 wait / waitForSelector 截图前等待；可选 path 保存为本地 png。",
+      "group": "runtime",
+      "source": {
+        "type": "wechatide"
+      },
+      "scenes": [
+        "debugger"
+      ],
+      "inputSchema": {
+        "project": {
+          "type": "string",
+          "required": true,
+          "description": "项目绝对路径"
+        },
+        "path": {
+          "type": "string",
+          "required": false,
+          "description": "可选，截图本地输出路径（png）；不传则仅返回图片内容"
+        },
+        "wait": {
+          "type": "number",
+          "required": false,
+          "description": "截图前固定等待秒数（可选；和 waitForSelector 可同时传；范围 0-10）"
+        },
+        "waitForSelector": {
+          "type": "string",
+          "required": false,
+          "description": "截图前等待出现的选择器（可选；推荐优先使用）"
+        }
+      },
+      "execution": {
+        "transport": "skill_call",
+        "toolName": "simulator_screenshot"
       }
     },
     {
@@ -640,6 +676,16 @@
         "changedTouches": {
           "type": "array",
           "required": false
+        },
+        "wait": {
+          "type": "number",
+          "required": false,
+          "description": "执行前固定等待秒数（可选；和 waitForSelector 可同时传；范围 0-10）"
+        },
+        "waitForSelector": {
+          "type": "string",
+          "required": false,
+          "description": "执行前等待出现的选择器（可选；推荐优先使用）"
         }
       },
       "execution": {
@@ -711,7 +757,7 @@
     {
       "id": "automation_navigate",
       "name": "页面导航",
-      "summary": "执行小程序页面导航。",
+      "summary": "执行小程序页面导航。可选 waitForSelector/wait 在导航前等待。",
       "group": "automation",
       "source": {
         "type": "wechatide"
@@ -735,6 +781,16 @@
         "delta": {
           "type": "number",
           "required": false
+        },
+        "wait": {
+          "type": "number",
+          "required": false,
+          "description": "执行前固定等待秒数（可选；和 waitForSelector 可同时传；范围 0-10）"
+        },
+        "waitForSelector": {
+          "type": "string",
+          "required": false,
+          "description": "执行前等待出现的选择器（可选；推荐优先使用）"
         }
       },
       "execution": {
@@ -745,7 +801,7 @@
     {
       "id": "automation_page_action",
       "name": "页面级操作",
-      "summary": "执行页面数据读取、查询、等待和页面方法调用。",
+      "summary": "针对当前页面实例执行页面级读写。可选 waitForSelector/wait 在操作前等待",
       "group": "automation",
       "source": {
         "type": "wechatide"
@@ -756,35 +812,57 @@
       "inputSchema": {
         "project": {
           "type": "string",
-          "required": true
+          "required": true,
+          "description": "项目绝对路径"
         },
         "action": {
           "type": "string",
-          "required": true
+          "required": true,
+          "enum": [
+            "getData",
+            "setData",
+            "querySelector",
+            "querySelectorAll",
+            "size",
+            "callMethod",
+            "scrollTop"
+          ],
+          "description": "操作类型"
         },
-        "path": {
+        "dataPath": {
           "type": "string",
-          "required": false
+          "required": false,
+          "description": "页面 data 字段路径（getData 可选；如 list、userInfo.nickName，不是页面路由）"
         },
         "patch": {
           "type": "string",
-          "required": false
-        },
-        "condition": {
-          "type": "string",
-          "required": false
+          "required": false,
+          "description": "data json 字符串 更改（setData 需要）"
         },
         "selector": {
           "type": "string",
-          "required": false
+          "required": false,
+          "description": "选择器字符串（querySelector/querySelectorAll 需要）"
         },
         "method": {
           "type": "string",
-          "required": false
+          "required": false,
+          "description": "页面方法名（callMethod 需要）"
         },
         "args": {
           "type": "array",
-          "required": false
+          "required": false,
+          "description": "方法参数（callMethod 需要）"
+        },
+        "wait": {
+          "type": "number",
+          "required": false,
+          "description": "执行前固定等待秒数（可选；和 waitForSelector 可同时传；范围 0-10）"
+        },
+        "waitForSelector": {
+          "type": "string",
+          "required": false,
+          "description": "执行前等待出现的选择器（可选；推荐优先使用）"
         }
       },
       "execution": {
@@ -795,7 +873,7 @@
     {
       "id": "automation_runtime_info",
       "name": "运行时信息",
-      "summary": "读取 DevTools 当前项目窗口和运行时信息，包括 pageStack、currentPage 或 systemInfo。",
+      "summary": "读取 WechatIDE 当前项目窗口和运行时信息，包括 pageStack、currentPage 或 systemInfo。",
       "group": "automation",
       "source": {
         "type": "wechatide"
@@ -861,7 +939,7 @@
     {
       "id": "automation_viewport_action",
       "name": "页面操作",
-      "summary": "执行滚动、截图、真机调试等操作。",
+      "summary": "执行滚动、截图、真机调试等操作。可选 waitForSelector/wait 在操作前等待。screenshot 走 automator 截图，可被 automation_generate_script 收入测试脚本。",
       "group": "automation",
       "source": {
         "type": "wechatide"
@@ -883,7 +961,8 @@
             "stopAudits",
             "remote",
             "close"
-          ]
+          ],
+          "description": "操作类型"
         },
         "scrollTop": {
           "type": "number",
@@ -892,17 +971,17 @@
         "path": {
           "type": "string",
           "required": false,
-          "description": "截图本地输出路径"
+          "description": "截图本地输出路径（screenshot 可选）"
+        },
+        "wait": {
+          "type": "number",
+          "required": false,
+          "description": "执行前固定等待秒数（可选；和 waitForSelector 可同时传；范围 0-10）"
         },
         "waitForSelector": {
           "type": "string",
           "required": false,
-          "description": "截图前等待该选择器出现。action=screenshot 时 waitForSelector 和 waitSeconds 必须至少传一个，推荐优先使用 waitForSelector"
-        },
-        "waitSeconds": {
-          "type": "number",
-          "required": false,
-          "description": "截图前固定等待秒数，范围 0-10。action=screenshot 时 waitForSelector 和 waitSeconds 必须至少传一个"
+          "description": "执行前等待出现的选择器（可选；推荐优先使用）"
         },
         "auto": {
           "type": "boolean",

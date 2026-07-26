@@ -3,6 +3,8 @@ name: researchwrite
 description: >-
   Proposal-first scientific writing pipeline. Three modes (compose/revise/hybrid) with four-layer QA pipeline.
   Enforces evidence-before-prose, argument-before-sections, and contracts-before-paragraphs.
+  Use when drafting or revising research proposals, grant applications, study plans,
+  or evidence-first scientific writing.
   中文触发词：开题报告、研究方案、proposal、基金申请、课题设计、先证据后写作、科研写作QA、章节契约、研究计划、项目申请书。
 version: 1.0.0
 author: 十五 (JL Lab)
