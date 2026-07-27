@@ -51,7 +51,7 @@ git commit -m "chore: update codex dotfiles"
 
 ## 每日 Automation
 
-每日同步使用的完整 prompt 位于 `docs/daily-automation-prompt.md`。计划时间为每天 `18:00 Asia/Shanghai`，仅在本机内容确有变化并成功推送 GitHub 后，才非破坏性同步 `yis-imac` 和 `8-4090`。
+每日同步使用的完整 prompt 位于 `docs/daily-automation-prompt.md`。计划时间为每天 `18:00 Asia/Shanghai`，仅在本机内容确有变化并成功推送 GitHub 后，才非破坏性同步 `yis-imac`、`8-4090` 和 `server-3090`。
 
 ## 不同步什么
 

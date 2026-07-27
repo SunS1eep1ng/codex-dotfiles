@@ -44,11 +44,12 @@ Use `$planning-with-files` for progress tracking and `$verification-loop` before
 
 7. If there is no meaningful diff, do not commit or contact the remote hosts. Report `No changes`.
 8. If there is a valid diff, stage only `AGENTS.md`, `config/`, `skills/`, and generated files under `docs/`. Review the staged diff and rerun the safety check.
-9. Commit as `chore: sync codex dotfiles YYYY-MM-DD`, then push `main` with a normal non-force push. If push fails, do not sync either remote.
+9. Commit as `chore: sync codex dotfiles YYYY-MM-DD`, then push `main` with a normal non-force push. If push fails, do not sync any remote host.
 10. After a successful push, update each host independently:
 
     - `yis-imac`: use `~/codex-dotfiles`; clone the public repo there if absent.
     - `8-4090`: use `~/codex-dotfiles`; reuse the existing checkout.
+    - `server-3090`: use `~/codex-dotfiles`; clone the public repo there if absent.
     - Before pulling, require a clean remote checkout. If dirty, skip that host and report it.
     - Capture the remote-only top-level skill directory names before syncing so their preservation can be verified afterward.
     - Run `git fetch origin`, `git checkout main`, and `git pull --ff-only`.
